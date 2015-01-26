@@ -5,12 +5,12 @@ package com.naild2d.android.service;
  */
 public interface AuthService extends Service {
 
-    public boolean Register(String phone, String code, String pwd, String ref);
+    public boolean register(String phone, String code, String pwd, String ref);
 
-    public boolean Login(String phone, String pwd);
+    public boolean login(String phone, String pwd);
 
-    public boolean ForgetPassword(String phone);
+    public boolean forgetPassword(String phone);
 
-    public boolean ResetPassword(String phone, String oldPwd, String newPwd);
+    public boolean resetPassword(String phone, String oldPwd, String newPwd);
 
 }
