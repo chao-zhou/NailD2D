@@ -3,7 +3,7 @@ package com.naild2d.android.service;
 /**
  * Created by chao_zhou on 15/1/26.
  */
-public interface AuthService {
+public interface AuthService extends Service {
 
     public boolean Register(String phone, String code, String pwd, String ref);
 
