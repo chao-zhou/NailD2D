@@ -5,8 +5,8 @@ package com.naild2d.android.service;
  */
 public interface Service {
 
-    public void Config();
+    public void config();
 
-    public void Config(ServiceConfig config);
+    public void config(ServiceConfig config);
 
 }
