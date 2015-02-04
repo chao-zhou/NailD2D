@@ -89,18 +89,20 @@
                 <ImageButton
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
-                    android:src="@drawable/home_btn_icon_white_03"
-                    android:background="@drawable/home_btn_bg_03"
-                    android:layout_margin="10dp"
-                    android:scaleType="centerInside" />
+                    android:src="@drawable/home_btn_white_13"
+                    android:background="@android:color/transparent"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:scaleType="fitEnd" />
 
                 <ImageButton
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
-                    android:src="@drawable/home_btn_icon_white_06"
-                    android:background="@drawable/home_btn_bg_05"
-                    android:layout_margin="10dp"
-                    android:scaleType="centerInside" />
+                    android:src="@drawable/home_btn_white_15"
+                    android:background="@android:color/transparent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:scaleType="fitStart" />
             </TableRow>
 
             <TableRow
@@ -110,18 +112,18 @@
                 <ImageButton
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
-                    android:src="@drawable/home_btn_icon_white_11"
-                    android:background="@drawable/home_btn_bg_10"
-                    android:layout_margin="10dp"
-                    android:scaleType="centerInside" />
+                    android:src="@drawable/home_btn_white_20"
+                    android:background="@android:color/transparent"
+                    android:layout_marginRight="10dp"
+                    android:scaleType="fitEnd" />
 
                 <ImageButton
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
-                    android:src="@drawable/home_btn_icon_white_14"
-                    android:background="@drawable/home_btn_bg_12"
-                    android:layout_margin="10dp"
-                    android:scaleType="centerInside" />
+                    android:src="@drawable/home_btn_white_22"
+                    android:background="@android:color/transparent"
+                    android:layout_marginLeft="10dp"
+                    android:scaleType="fitStart" />
             </TableRow>
         </TableLayout>
     </LinearLayout>
