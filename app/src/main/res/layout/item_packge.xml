@@ -22,17 +22,28 @@
         android:layout_toEndOf="@+id/item_thumbnail">
         <TableRow android:layout_weight="1">
             <LinearLayout android:orientation="horizontal"  android:gravity="center_vertical">
-                <ImageView android:layout_height="20dp" android:layout_width="20dp" android:src="#00FF00"/>
-                <TextView  android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="package name"/>
+                <ImageView
+                    android:layout_height="20dp"
+                    android:layout_width="20dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/pkgls_icon_name_normal"/>
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="甜美日系新娘款"/>
             </LinearLayout>
         </TableRow>
         <TableRow android:layout_weight="1">
-            <TextView android:text="package name"/>
+            <TextView android:text="甜美日系新娘款甜美日系新娘款甜美日系新娘款甜美日系新娘款甜美日系新娘款"/>
         </TableRow>
         <TableRow android:layout_weight="1">
             <LinearLayout android:orientation="horizontal"  android:gravity="center_vertical">
-                <ImageView android:layout_height="20dp" android:layout_width="20dp" android:src="#0000FF"/>
-                <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="package name"/>
+                <ImageView
+                    android:layout_height="20dp"
+                    android:layout_width="20dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/pkgls_icon_addr_normal"/>
+                <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="甜美日系新娘款"/>
             </LinearLayout>
         </TableRow>
     </TableLayout>

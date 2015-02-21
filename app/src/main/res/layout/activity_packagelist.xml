@@ -2,42 +2,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.naild2d.android.HomeActivity"
-    android:background="#ffffffff"
+    android:background="@drawable/pkgls_bg"
     android:orientation="vertical">
         <RelativeLayout
             android:id="@+id/home_head_bar"
             android:layout_width="fill_parent"
-            android:layout_height="45dp"
+            android:layout_height="85dp"
             android:orientation="horizontal"
             android:layout_marginBottom="10dp"
-            android:background="@android:color/transparent">
+            android:background="@drawable/pkgls_top_bar">
 
             <ImageButton
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="40dp"
                 android:layout_alignParentLeft="true"
-                android:src="@drawable/home_btn_menu"
+                android:src="@drawable/pkgls_back"
                 android:scaleType="centerInside"
                 android:background="@android:color/transparent" />
 
-            <ImageView
+            <TextView
+                android:layout_marginTop="36dp"
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
                 android:layout_centerHorizontal="true"
-                android:src="@drawable/home_logo"
+                android:text="美甲服务"
+                android:textColor="#FFFFFF"
+                android:textSize="30sp"
                 android:scaleType="centerInside"
                 android:background="@android:color/transparent" />
 
             <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="fill_parent"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="40dp"
                 android:layout_alignParentRight="true"
-                android:src="@drawable/home_btn_profile"
+                android:src="@drawable/pkgls_loc_normal"
                 android:scaleType="centerInside"
                 android:background="@android:color/transparent" />
 
@@ -45,5 +48,7 @@
         <ListView
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-          />
+            android:divider="@drawable/pkgls_divider"
+            android:choiceMode="singleChoice"
+            android:clickable="true" />
 </LinearLayout>
