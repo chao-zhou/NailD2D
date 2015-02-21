@@ -1,73 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent">
 
     <ImageView
         android:id="@+id/item_thumbnail"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_margin="10dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
         android:src="#FF0000"/>
 
     <TableLayout
         android:id="@+id/item_info"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:orientation="vertical"
-        android:layout_centerVertical="true"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
         android:layout_toLeftOf="@+id/item_price"
         android:layout_toRightOf="@+id/item_thumbnail"
         android:layout_toEndOf="@+id/item_thumbnail">
-        <TableRow android:layout_weight="1">
-            <LinearLayout android:orientation="horizontal"  android:gravity="center_vertical">
+        <TableRow android:layout_weight="1" android:gravity="center_vertical">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
                 <ImageView
                     android:layout_height="20dp"
                     android:layout_width="20dp"
                     android:scaleType="centerInside"
                     android:src="@drawable/pkgls_icon_name_normal"/>
                 <TextView
+                    android:id="@+id/pkg_item_name"
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
+                    android:textSize="22sp"
                     android:text="甜美日系新娘款"/>
             </LinearLayout>
         </TableRow>
-        <TableRow android:layout_weight="1">
-            <TextView android:text="甜美日系新娘款甜美日系新娘款甜美日系新娘款甜美日系新娘款甜美日系新娘款"/>
+        <TableRow android:layout_weight="1" android:gravity="center_vertical">
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textSize="12sp"
+                android:maxLines="3"
+                android:lines="3"
+                android:ellipsize="end"
+                android:singleLine="false"
+                android:text="abcd abcd abcd abcd abcd abcd abcd abcd abcd  abcd abcd abcd"/>
         </TableRow>
-        <TableRow android:layout_weight="1">
+        <TableRow android:layout_weight="1" android:gravity="center_vertical">
             <LinearLayout android:orientation="horizontal"  android:gravity="center_vertical">
                 <ImageView
                     android:layout_height="20dp"
                     android:layout_width="20dp"
                     android:scaleType="centerInside"
                     android:src="@drawable/pkgls_icon_addr_normal"/>
-                <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="甜美日系新娘款"/>
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:textSize="16sp"
+                    android:text="甜美日系新娘款"/>
             </LinearLayout>
         </TableRow>
     </TableLayout>
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/item_price"
-        android:layout_width="100dp"
+        android:layout_width="70dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:gravity="center_horizontal"
-        android:orientation="horizontal">
+        android:layout_alignParentRight="true">
+        <ImageView
+            android:id="@+id/pkg_item_yuan_icon"
+            android:layout_alignParentBottom="true"
+            android:layout_width="9dp"
+            android:layout_height="14dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/pkgls_icon_yuan_normal" />
+        <TextView
+            android:id="@+id/pkg_item_yuan_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="123"
+            android:textSize="22sp"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@+id/pkg_item_yuan_icon"
+            android:layout_toEndOf="@+id/pkg_item_yuan_icon" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="$"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="000"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="起"/>
-    </LinearLayout>
+            android:textSize="16sp"
+            android:text="起"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@+id/pkg_item_yuan_value"
+            android:layout_toEndOf="@+id/pkg_item_yuan_value" />
+    </RelativeLayout>
 
 </RelativeLayout>
