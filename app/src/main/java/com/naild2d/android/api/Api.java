@@ -1,6 +1,7 @@
 package com.naild2d.android.api;
 
 import com.naild2d.android.network.ServiceClient;
+import com.naild2d.android.network.ServiceError;
 import com.naild2d.android.network.ServiceRequest;
 
 import org.apache.http.HttpEntity;
@@ -18,10 +19,13 @@ public abstract class Api {
 
     protected String getResponseString(ServiceRequest req){
         HttpResponse res = ServiceClient.getClient().execute(req);
-        HttpEntity entity = res.getEntity();
         try {
-            return EntityUtils.toString(entity, "UTF-8");
-        } catch (IOException e) {
+            //ServiceError.riseError(res.getStatusLine().getStatusCode());
+            HttpEntity entity = res.getEntity();
+            String rslt = EntityUtils.toString(entity, "UTF-8");
+            return rslt;
+        } catch (Exception e) {
+            e.printStackTrace();
             return null;
         }
     }
