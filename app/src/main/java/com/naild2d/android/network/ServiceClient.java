@@ -1,5 +1,7 @@
 package com.naild2d.android.network;
 
+import com.naild2d.android.log.Logger;
+
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.impl.client.DefaultHttpClient;
@@ -33,7 +35,7 @@ public class ServiceClient {
             return res;
 
         } catch (Exception e) {
-            e.printStackTrace();
+            Logger.e(e);
         }
 
         return null;

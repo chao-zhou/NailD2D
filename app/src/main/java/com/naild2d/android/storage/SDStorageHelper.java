@@ -2,6 +2,8 @@ package com.naild2d.android.storage;
 
 import android.os.Environment;
 
+import com.naild2d.android.log.Logger;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -25,7 +27,7 @@ public class SDStorageHelper {
             return file;
         }
         catch (java.io.IOException e) {
-            e.printStackTrace();
+            Logger.e(e);
         }
 
         return null;
@@ -46,7 +48,7 @@ public class SDStorageHelper {
             return buffer;
         }
         catch (java.io.IOException e) {
-            e.printStackTrace();
+            Logger.e(e);
         }
 
         return null;

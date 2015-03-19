@@ -1,7 +1,7 @@
 package com.naild2d.android.api;
 
+import com.naild2d.android.log.Logger;
 import com.naild2d.android.network.ServiceClient;
-import com.naild2d.android.network.ServiceError;
 import com.naild2d.android.network.ServiceRequest;
 
 import org.apache.http.HttpEntity;
@@ -25,7 +25,7 @@ public abstract class Api {
             String rslt = EntityUtils.toString(entity, "UTF-8");
             return rslt;
         } catch (Exception e) {
-            e.printStackTrace();
+            Logger.e(e);
             return null;
         }
     }
@@ -37,7 +37,7 @@ public abstract class Api {
             res.getEntity().writeTo(s);
             return s.toByteArray();
         } catch (IOException e) {
-            e.printStackTrace();
+            Logger.e(e);
         }
         return  null;
     }

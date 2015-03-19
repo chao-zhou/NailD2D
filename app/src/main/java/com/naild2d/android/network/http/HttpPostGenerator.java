@@ -1,5 +1,6 @@
 package com.naild2d.android.network.http;
 
+import com.naild2d.android.log.Logger;
 import com.naild2d.android.network.ServiceRequest;
 
 import org.apache.http.NameValuePair;
@@ -34,7 +35,7 @@ public class HttpPostGenerator extends HttpRequestGenerator {
             post.setEntity(new UrlEncodedFormEntity(params, HTTP.UTF_8));
             return post;
         } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
+            Logger.e(e);
             return null;
         }
     }

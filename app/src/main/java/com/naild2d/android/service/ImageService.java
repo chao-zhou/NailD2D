@@ -2,6 +2,7 @@ package com.naild2d.android.service;
 
 import com.naild2d.android.api.ImageApi;
 import com.naild2d.android.json.IndexJsonObject;
+import com.naild2d.android.log.Logger;
 import com.naild2d.android.model.Advertisement;
 
 import org.json.JSONException;
@@ -29,7 +30,7 @@ public class ImageService {
             //Advertisement[] advs = Arrays.copyOf(array,array.length,Advertisement[].class);
             return json.getObjectArray(Advertisement.class);
         } catch (JSONException | IllegalAccessException | InstantiationException | NoSuchMethodException | InvocationTargetException e) {
-            e.printStackTrace();
+            Logger.e(e);
         }
 
         return null;
