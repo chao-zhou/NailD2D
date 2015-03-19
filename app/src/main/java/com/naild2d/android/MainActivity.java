@@ -1,17 +1,37 @@
 package com.naild2d.android;
 
+import android.annotation.TargetApi;
+import android.app.Activity;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+
+import com.naild2d.android.service.AccountService;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends Activity {
 
+    AccountService accountService;
+    EditText editCode;
+
+    @TargetApi(Build.VERSION_CODES.GINGERBREAD)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+
+        editCode  = (EditText)findViewById(R.id.txtCode);
+
+        accountService = new AccountService();
     }
 
 
@@ -35,5 +55,17 @@ public class MainActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+
+
+
+    public void code(View v){
+        accountService.getCertCode("18600406362");
+    }
+
+    public void newUser(View v){
+        String code = editCode.getText().toString();
+        accountService.register("18600406362","841111",code,"");
     }
 }
