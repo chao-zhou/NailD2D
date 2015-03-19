@@ -27,11 +27,11 @@ public class OrderApi extends Api{
     }
 
     //3.31
-    public String list(String user, String status, int page_size, int page){
+    public String list(String user, String status, int pageSize, int page){
         ServiceRequest req = new ServiceRequest("/order");
         req.setMethod(ServiceRequest.METHOD_POST);
         req.setType(ServiceRequest.TYPE_ACCESS);
-        addParams(req,"lat",String.valueOf(page_size));
+        addParams(req,"lat",String.valueOf(pageSize));
         addParams(req,"lon",String.valueOf(page));
         addParams(req,"user",user);
         addParams(req,"status",status);

@@ -26,8 +26,6 @@ public class ImageService {
         String jString = imageApi.getAds();
         try {
             IndexJsonObject json = new IndexJsonObject(jString);
-            //Object[] array = json.getObjectArray(new Advertisement());
-            //Advertisement[] advs = Arrays.copyOf(array,array.length,Advertisement[].class);
             return json.getObjectArray(Advertisement.class);
         } catch (JSONException | IllegalAccessException | InstantiationException | NoSuchMethodException | InvocationTargetException e) {
             Logger.e(e);

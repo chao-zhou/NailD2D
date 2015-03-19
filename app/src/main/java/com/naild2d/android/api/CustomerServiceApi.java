@@ -8,12 +8,12 @@ import com.naild2d.android.network.ServiceRequest;
 public class CustomerServiceApi extends Api{
 
     //3.25
-    public String getOrderedItemList(String user,int page_size, int page){
+    public String getOrderedItemList(String user,int pageSize, int page){
         ServiceRequest req = new ServiceRequest("/orderitem");
         req.setMethod(ServiceRequest.METHOD_GET);
         req.setType(ServiceRequest.TYPE_ACCESS);
         addParams(req,"user",user);
-        addParams(req,"page_size",String.valueOf(page_size));
+        addParams(req,"page_size",String.valueOf(pageSize));
         addParams(req,"page",String.valueOf(page));
         return getResponseString(req);
     }

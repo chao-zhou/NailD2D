@@ -47,12 +47,12 @@ public class AccountApi extends Api {
     }
 
     //3.8
-    public String resetPwd(String phone,String old_pw , String new_pw){
+    public String resetPwd(String phone,String oldPw , String newPw){
         ServiceRequest req = new ServiceRequest("/user/"+ phone);
         req.setMethod(ServiceRequest.METHOD_PUT);
         req.setType(ServiceRequest.TYPE_PUBLIC);
-        addParams(req,"old_pw",old_pw);
-        addParams(req,"new_pw",new_pw);
+        addParams(req,"old_pw",oldPw);
+        addParams(req,"new_pw",newPw);
         return getResponseString(req);
     }
 }

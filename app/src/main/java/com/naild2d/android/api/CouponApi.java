@@ -7,11 +7,11 @@ import com.naild2d.android.network.ServiceRequest;
  */
 public class CouponApi extends Api {
     //3.19
-    public String getOnDoorCoupon(String user, int page_size,int page){
+    public String getOnDoorCoupon(String user, int pageSize,int page){
         ServiceRequest req = new ServiceRequest("/coupon");
         req.setMethod(ServiceRequest.METHOD_GET);
         req.setType(ServiceRequest.TYPE_ACCESS);
-        addParams(req,"page_size",String.valueOf(page_size));
+        addParams(req,"page_size",String.valueOf(pageSize));
         addParams(req,"page",String.valueOf(page));
         addParams(req,"user",user);
         addParams(req,"type",String.valueOf(1));
@@ -19,11 +19,11 @@ public class CouponApi extends Api {
     }
 
     //3.32
-    public String getOnShopCoupon(String user, int page_size,int page){
+    public String getOnShopCoupon(String user, int pageSize,int page){
         ServiceRequest req = new ServiceRequest("/coupon");
         req.setMethod(ServiceRequest.METHOD_GET);
         req.setType(ServiceRequest.TYPE_ACCESS);
-        addParams(req,"page_size",String.valueOf(page_size));
+        addParams(req,"page_size",String.valueOf(pageSize));
         addParams(req,"page",String.valueOf(page));
         addParams(req,"user",user);
         addParams(req,"type",String.valueOf(2));
