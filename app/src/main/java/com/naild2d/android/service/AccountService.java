@@ -17,6 +17,15 @@ public class AccountService {
         accountApi = new AccountApi();
     }
 
+    public boolean getCertCode(String phone){
+        return accountApi.requestNewUser(phone) != null;
+    }
+
+    public boolean register(String phone, String pwd, String code, String ref){
+        String res = accountApi.register(phone, pwd, code, ref);
+        return res != null;
+    }
+
     public boolean login(String phone, String pwd){
 
         if(ServiceToken.ACCESS_TOKEN != null){
