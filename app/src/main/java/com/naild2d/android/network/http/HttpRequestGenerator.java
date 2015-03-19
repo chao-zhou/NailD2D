@@ -20,6 +20,7 @@ public abstract class HttpRequestGenerator {
             instances = new ArrayList<HttpRequestGenerator>();
             instances.add(new HttpGetGenerator());
             instances.add(new HttpPostGenerator());
+            instances.add(new HttpPutGenerator());
         }
 
         for(HttpRequestGenerator instance : instances){
