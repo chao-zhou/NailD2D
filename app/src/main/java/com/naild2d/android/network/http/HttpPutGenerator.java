@@ -5,8 +5,15 @@ import android.net.Uri;
 import com.naild2d.android.network.ServiceRequest;
 
 import org.apache.http.NameValuePair;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPut;
 import org.apache.http.client.methods.HttpUriRequest;
+import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.protocol.HTTP;
+
+import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by chaozhou on 3/9/2015.
@@ -17,7 +24,19 @@ public class HttpPutGenerator extends HttpRequestGenerator {
     public HttpUriRequest getHttpRequest(ServiceRequest req) {
         String queryURI = getQueryURI(req);
         HttpPut  put = new HttpPut(queryURI);
-        return put;
+
+        List<NameValuePair> params = new ArrayList<NameValuePair>();
+        for(NameValuePair pair : req.getParams()){
+            params.add(new BasicNameValuePair(pair.getName(),pair.getValue()));
+        }
+
+        try {
+            put.setEntity(new UrlEncodedFormEntity(params, HTTP.UTF_8));
+            return put;
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
     @Override
