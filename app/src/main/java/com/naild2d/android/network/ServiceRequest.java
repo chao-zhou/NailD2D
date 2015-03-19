@@ -37,9 +37,9 @@ public class ServiceRequest {
         relativeURI = uri;
         method = METHOD_GET;
         type = TYPE_PUBLIC;
-        oAuthValues = new ArrayList<NameValuePair>();
-        headers = new ArrayList<NameValuePair>();
-        params = new ArrayList<NameValuePair>();
+        oAuthValues = new ArrayList<>();
+        headers = new ArrayList<>();
+        params = new ArrayList<>();
     }
 
     public HttpUriRequest getHttpRequest(){

@@ -15,22 +15,21 @@ import java.io.IOException;
 /**
  * Created by chaozhou on 3/9/2015.
  */
-public abstract class Api {
+abstract class Api {
 
-    protected String getResponseString(ServiceRequest req){
+    String getResponseString(ServiceRequest req){
         HttpResponse res = ServiceClient.getClient().execute(req);
         try {
             //ServiceError.riseError(res.getStatusLine().getStatusCode());
             HttpEntity entity = res.getEntity();
-            String rslt = EntityUtils.toString(entity, "UTF-8");
-            return rslt;
+            return EntityUtils.toString(entity, "UTF-8");
         } catch (Exception e) {
             Logger.e(e);
             return null;
         }
     }
 
-    protected byte[] getResponseBytes(ServiceRequest req){
+    byte[] getResponseBytes(ServiceRequest req){
         HttpResponse res = ServiceClient.getClient().execute(req);
         ByteArrayOutputStream s = new ByteArrayOutputStream();
         try {
@@ -42,7 +41,7 @@ public abstract class Api {
         return  null;
     }
 
-    protected void addParams(ServiceRequest req, String name,String value){
+    void addParams(ServiceRequest req, String name, String value){
         if(name == null || value == null)
             return;
 

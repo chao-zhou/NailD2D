@@ -5,20 +5,18 @@ import android.app.Activity;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.StrictMode;
-import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import com.naild2d.android.service.AccountService;
 
 
 public class MainActivity extends Activity {
 
-    AccountService accountService;
-    EditText editCode;
+    private AccountService accountService;
+    private EditText editCode;
 
     @TargetApi(Build.VERSION_CODES.GINGERBREAD)
     @Override

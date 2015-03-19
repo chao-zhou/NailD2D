@@ -26,7 +26,7 @@ public class HttpPutGenerator extends HttpRequestGenerator {
         String queryURI = getQueryURI(req);
         HttpPut  put = new HttpPut(queryURI);
 
-        List<NameValuePair> params = new ArrayList<NameValuePair>();
+        List<NameValuePair> params = new ArrayList<>();
         for(NameValuePair pair : req.getParams()){
             params.add(new BasicNameValuePair(pair.getName(),pair.getValue()));
         }
@@ -42,7 +42,7 @@ public class HttpPutGenerator extends HttpRequestGenerator {
 
     @Override
     protected boolean fit(ServiceRequest req) {
-        return req.getMethod() == ServiceRequest.METHOD_PUT;
+        return req.getMethod().equals(ServiceRequest.METHOD_PUT);
     }
 
     private static String getQueryURI(ServiceRequest req){

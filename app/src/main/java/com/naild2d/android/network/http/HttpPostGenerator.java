@@ -21,7 +21,7 @@ public class HttpPostGenerator extends HttpRequestGenerator {
     @Override
     public HttpUriRequest getHttpRequest(ServiceRequest req) {
         HttpPost post = new HttpPost(req.getFullURI());
-        List<NameValuePair> params = new ArrayList<NameValuePair>();
+        List<NameValuePair> params = new ArrayList<>();
 
         for(NameValuePair pair : req.getParams()){
             params.add(new BasicNameValuePair(pair.getName(),pair.getValue()));
@@ -42,6 +42,6 @@ public class HttpPostGenerator extends HttpRequestGenerator {
 
     @Override
     protected boolean fit(ServiceRequest req) {
-        return req.getMethod() == ServiceRequest.METHOD_POST;
+        return req.getMethod().equals(ServiceRequest.METHOD_POST);
     }
 }

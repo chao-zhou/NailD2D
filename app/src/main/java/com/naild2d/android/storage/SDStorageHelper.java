@@ -43,7 +43,7 @@ public class SDStorageHelper {
         try {
             FileInputStream fis=new FileInputStream(file.getPath());
             byte[] buffer = new byte[fis.available()];
-            fis.read(buffer);
+            fis.read(buffer)
             fis.close();
             return buffer;
         }

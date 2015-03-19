@@ -19,24 +19,24 @@ public class ServiceError {
         statusCodeErrorMap.put(500, "Server Error ");
     }
 
-    public static boolean isError(int code){
-        return statusCodeErrorMap.containsKey(code);
+    public static boolean isSuccess(int code){
+        return !statusCodeErrorMap.containsKey(code);
     }
 
     public static String getErrorMsg(int code) {
-        if(!isError(code))
+        if(isSuccess(code))
             return null;
         return statusCodeErrorMap.get(code);
     }
 
     public static Exception getError(int code){
-        if(!isError(code))
+        if(isSuccess(code))
             return null;
         return new Exception(getErrorMsg(code));
     }
 
     public static void riseError(int code) throws Exception{
-        if(!isError(code))
+        if(isSuccess(code))
             return;
         throw  getError(code);
     }

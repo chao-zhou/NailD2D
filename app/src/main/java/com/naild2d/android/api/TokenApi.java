@@ -1,9 +1,6 @@
 package com.naild2d.android.api;
 
-import com.naild2d.android.network.ServiceClient;
 import com.naild2d.android.network.ServiceRequest;
-
-import org.apache.http.HttpResponse;
 
 /**
  * Created by chaozhou on 3/17/2015.

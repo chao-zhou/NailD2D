@@ -5,16 +5,8 @@ import android.net.Uri;
 import com.naild2d.android.network.ServiceRequest;
 
 import org.apache.http.NameValuePair;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpUriRequest;
-import org.apache.http.message.BasicNameValuePair;
-import org.apache.http.protocol.HTTP;
-
-import java.io.UnsupportedEncodingException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by chaozhou on 3/9/2015.
@@ -23,13 +15,12 @@ public class HttpGetGenerator extends HttpRequestGenerator {
     @Override
     public HttpUriRequest getHttpRequest(ServiceRequest req) {
         String queryURI = getQueryURI(req);
-        HttpGet get = new HttpGet(queryURI);
-        return get;
+        return new HttpGet(queryURI);
     }
 
     @Override
     protected boolean fit(ServiceRequest req) {
-        return req.getMethod() == ServiceRequest.METHOD_GET;
+        return req.getMethod().equals(ServiceRequest.METHOD_GET);
     }
 
     private static String getQueryURI(ServiceRequest req){

@@ -7,16 +7,13 @@ import com.naild2d.android.model.Advertisement;
 
 import org.json.JSONException;
 
-import java.lang.reflect.Array;
 import java.lang.reflect.InvocationTargetException;
-import java.util.Arrays;
-import java.util.Objects;
 
 /**
  * Created by chaozhou on 3/17/2015.
  */
 public class ImageService {
-    ImageApi imageApi = null;
+    private ImageApi imageApi = null;
 
     public ImageService(){
         imageApi = new ImageApi();

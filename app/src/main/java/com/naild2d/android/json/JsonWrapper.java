@@ -8,9 +8,9 @@ import org.json.JSONObject;
  */
 public abstract class JsonWrapper {
 
-    public abstract void wrap(JSONObject json) throws JSONException;
+    protected abstract void wrap(JSONObject json) throws JSONException;
 
-    public JsonWrapper(JSONObject json) throws JSONException {
+    protected JsonWrapper(JSONObject json) throws JSONException {
         wrap(json);
     }
 }

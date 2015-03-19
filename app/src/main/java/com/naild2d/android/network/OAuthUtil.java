@@ -9,7 +9,6 @@ import org.apache.http.message.BasicNameValuePair;
 
 import java.net.URLEncoder;
 import java.util.Date;
-import java.util.Iterator;
 import java.util.SortedMap;
 import java.util.TreeMap;
 import java.util.UUID;
@@ -17,7 +16,7 @@ import java.util.UUID;
 /**
  * Created by ebread on 2015/3/8.
  */
-public class OAuthUtil {
+class OAuthUtil {
    private static final String HEADER_CONSUMER_NAME = "oauth_consumer_key";
    private static final String HEADER_NONCE_NAME = "oauth_nonce";
    private static final String HEADER_SIGNATURE_METHOD_NAME = "oauth_signature_method";
@@ -73,17 +72,9 @@ public class OAuthUtil {
        String q2 = req.getFullURI();
        String q3 = "";
 
-       SortedMap<String,String> sortedMap = new TreeMap<String,String>();
-       for(NameValuePair pair : req.getParams()){
-           sortedMap.put(pair.getName(),pair.getValue());
-       }
-       for (NameValuePair pair : req.getOAuthValues() )
-           sortedMap.put(pair.getName(), pair.getValue());
+       SortedMap<String, String> sortedMap = sortOAthParam(req);
 
-       Iterator it =  sortedMap.keySet().iterator();
-       while (it.hasNext())
-       {
-           Object key = it.next();
+       for (Object key : sortedMap.keySet()) {
            q3 += key + "=" + sortedMap.get(key) + "&";
        }
        q3 = q3.substring(0,q3.length()-1);
@@ -92,6 +83,16 @@ public class OAuthUtil {
              + URLEncoder(q2)+ "&"
              + URLEncoder(q3);
    }
+
+    private static SortedMap<String, String> sortOAthParam(ServiceRequest req) {
+        SortedMap<String,String> sortedMap = new TreeMap<>();
+        for(NameValuePair pair : req.getParams()){
+            sortedMap.put(pair.getName(),pair.getValue());
+        }
+        for (NameValuePair pair : req.getOAuthValues() )
+            sortedMap.put(pair.getName(), pair.getValue());
+        return sortedMap;
+    }
 
     public static String URLEncoder(String s){
        return URLEncoder.encode(s);
