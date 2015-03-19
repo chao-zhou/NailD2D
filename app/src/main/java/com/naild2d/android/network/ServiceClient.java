@@ -16,17 +16,6 @@ public class ServiceClient {
         return new ServiceClient();
     }
 
-    private static final Map<Integer,Exception> StatusCodeExceptionMap;
-
-    static {
-        StatusCodeExceptionMap = new HashMap<>();
-        StatusCodeExceptionMap.put(400,new Exception("Bad Request"));
-        StatusCodeExceptionMap.put(404,new Exception("Not Found"));
-        StatusCodeExceptionMap.put(204,new Exception("No Content"));
-        StatusCodeExceptionMap.put(401,new Exception("Unauthorized"));
-        StatusCodeExceptionMap.put(500,new Exception("Server Error "));
-    }
-
     private HttpClient client = null;
 
     public ServiceClient(){
@@ -41,7 +30,6 @@ public class ServiceClient {
     private HttpResponse getHttpResponse(ServiceRequest request) {
         try {
             HttpResponse res =  client.execute(request.getHttpRequest());
-            ServiceError.riseError( res.getStatusLine().getStatusCode());
             return res;
 
         } catch (Exception e) {
