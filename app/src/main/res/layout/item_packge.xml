@@ -75,9 +75,11 @@
             android:id="@+id/pkg_item_yuan_icon"
             android:layout_alignParentBottom="true"
             android:layout_width="9dp"
-            android:layout_height="14dp"
+            android:layout_height="20dp"
             android:scaleType="fitCenter"
-            android:src="@drawable/pkgls_icon_yuan_normal" />
+            android:src="@drawable/pkgls_icon_yuan_normal"
+            android:paddingBottom="5dp"
+            />
         <TextView
             android:id="@+id/pkg_item_yuan_value"
             android:layout_width="wrap_content"
@@ -96,5 +98,4 @@
             android:layout_toRightOf="@+id/pkg_item_yuan_value"
             android:layout_toEndOf="@+id/pkg_item_yuan_value" />
     </RelativeLayout>
-
 </RelativeLayout>
