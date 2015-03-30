@@ -1,5 +1,7 @@
 package com.naild2d.android.crypto;
 
+import com.naild2d.android.log.Logger;
+
 import java.io.UnsupportedEncodingException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
@@ -21,9 +23,8 @@ public class HmacCrpto {
             mac.init(key);
             return mac.doFinal(msg.getBytes("UTF-8"));
 
-        } catch (UnsupportedEncodingException e) {
-        } catch (InvalidKeyException e) {
-        } catch (NoSuchAlgorithmException e) {
+        } catch (UnsupportedEncodingException | NoSuchAlgorithmException | InvalidKeyException e) {
+            Logger.e(e);
         }
 
         return  null;
@@ -34,7 +35,7 @@ public class HmacCrpto {
         if(bytes == null)
             return  null;
 
-        StringBuffer hash = new StringBuffer();
+        StringBuilder hash = new StringBuilder();
         for (int i = 0; i < bytes.length; i++) {
             String hex = Integer.toHexString(0xFF & bytes[i]);
             if (hex.length() == 1) {

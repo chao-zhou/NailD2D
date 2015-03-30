@@ -1,5 +1,6 @@
 package com.naild2d.android.network.http;
 
+import com.naild2d.android.log.Logger;
 import com.naild2d.android.network.ServiceRequest;
 
 import org.apache.http.NameValuePair;
@@ -20,7 +21,7 @@ public class HttpPostGenerator extends HttpRequestGenerator {
     @Override
     public HttpUriRequest getHttpRequest(ServiceRequest req) {
         HttpPost post = new HttpPost(req.getFullURI());
-        List<NameValuePair> params = new ArrayList<NameValuePair>();
+        List<NameValuePair> params = new ArrayList<>();
 
         for(NameValuePair pair : req.getParams()){
             params.add(new BasicNameValuePair(pair.getName(),pair.getValue()));
@@ -34,13 +35,13 @@ public class HttpPostGenerator extends HttpRequestGenerator {
             post.setEntity(new UrlEncodedFormEntity(params, HTTP.UTF_8));
             return post;
         } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
+            Logger.e(e);
             return null;
         }
     }
 
     @Override
     protected boolean fit(ServiceRequest req) {
-        return req.getMethod() == ServiceRequest.METHOD_POST;
+        return req.getMethod().equals(ServiceRequest.METHOD_POST);
     }
 }

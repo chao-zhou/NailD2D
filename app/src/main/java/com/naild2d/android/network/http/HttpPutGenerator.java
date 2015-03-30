@@ -2,6 +2,7 @@ package com.naild2d.android.network.http;
 
 import android.net.Uri;
 
+import com.naild2d.android.log.Logger;
 import com.naild2d.android.network.ServiceRequest;
 
 import org.apache.http.NameValuePair;
@@ -25,7 +26,7 @@ public class HttpPutGenerator extends HttpRequestGenerator {
         String queryURI = getQueryURI(req);
         HttpPut  put = new HttpPut(queryURI);
 
-        List<NameValuePair> params = new ArrayList<NameValuePair>();
+        List<NameValuePair> params = new ArrayList<>();
         for(NameValuePair pair : req.getParams()){
             params.add(new BasicNameValuePair(pair.getName(),pair.getValue()));
         }
@@ -34,14 +35,14 @@ public class HttpPutGenerator extends HttpRequestGenerator {
             put.setEntity(new UrlEncodedFormEntity(params, HTTP.UTF_8));
             return put;
         } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
+            Logger.e(e);
             return null;
         }
     }
 
     @Override
     protected boolean fit(ServiceRequest req) {
-        return req.getMethod() == ServiceRequest.METHOD_PUT;
+        return req.getMethod().equals(ServiceRequest.METHOD_PUT);
     }
 
     private static String getQueryURI(ServiceRequest req){

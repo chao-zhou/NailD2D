@@ -8,14 +8,13 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Objects;
 
 /**
  * Created by chaozhou on 3/17/2015.
  */
 public class IndexJsonObject {
 
-    JSONObject json = null;
+    private JSONObject json = null;
     public  IndexJsonObject(String jsonStr) throws JSONException {
         json = new JSONObject(jsonStr);
     }
@@ -26,7 +25,7 @@ public class IndexJsonObject {
 
     public <T extends JsonWrapper> T[] getObjectArray(Class<T> clazz)
             throws JSONException,IllegalAccessException,InstantiationException,NoSuchMethodException,InvocationTargetException {
-        List<T> list = new ArrayList<T>();
+        List<T> list = new ArrayList<>();
         Iterator<String> it = json.keys();
         while (it.hasNext()){
             String key = it.next();
@@ -44,7 +43,6 @@ public class IndexJsonObject {
 
     private static <T extends JsonWrapper> T getObject(Class<T> clazz, JSONObject json)
             throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
-        T obj = clazz.getDeclaredConstructor(JSONObject.class).newInstance(json);
-        return obj;
+        return clazz.getDeclaredConstructor(JSONObject.class).newInstance(json);
     }
 }

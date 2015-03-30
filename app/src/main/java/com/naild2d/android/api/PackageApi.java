@@ -8,35 +8,35 @@ import com.naild2d.android.network.ServiceRequest;
 public class PackageApi extends Api {
 
     //3.9
-    public String list(double lat,double lon, int page_size, int page){
+    public String list(double lat,double lon, int pageSize, int page){
         ServiceRequest req = new ServiceRequest("/pack");
         req.setMethod(ServiceRequest.METHOD_GET);
         req.setType(ServiceRequest.TYPE_PUBLIC);
         addParams(req,"lat",String.valueOf(lat));
         addParams(req,"lon",String.valueOf(lon));
-        addParams(req,"page_size",String.valueOf(page_size));
+        addParams(req,"page_size",String.valueOf(pageSize));
         addParams(req,"page",String.valueOf(page));
         return getResponseString(req);
     }
 
     //3.11
-    public String getServiceList(String pack, int page_size, int page){
+    public String getServiceList(String pack, int pageSize, int page){
         ServiceRequest req = new ServiceRequest("/service");
         req.setMethod(ServiceRequest.METHOD_GET);
         req.setType(ServiceRequest.TYPE_PUBLIC);
         addParams(req,"pack",pack);
-        addParams(req,"page_size",String.valueOf(page_size));
+        addParams(req,"page_size",String.valueOf(pageSize));
         addParams(req,"page",String.valueOf(page));
         return getResponseString(req);
     }
 
     //3.13
-    public String getEvaluation(String pack, int page_size, int page){
+    public String getEvaluation(String pack, int pageSize, int page){
         ServiceRequest req = new ServiceRequest("/evaluation");
         req.setMethod(ServiceRequest.METHOD_GET);
         req.setType(ServiceRequest.TYPE_PUBLIC);
         addParams(req,"pack",pack);
-        addParams(req,"page_size",String.valueOf(page_size));
+        addParams(req,"page_size",String.valueOf(pageSize));
         addParams(req,"page",String.valueOf(page));
         return getResponseString(req);
     }

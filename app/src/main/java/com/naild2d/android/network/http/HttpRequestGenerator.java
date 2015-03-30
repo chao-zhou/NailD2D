@@ -17,7 +17,7 @@ public abstract class HttpRequestGenerator {
     public static HttpRequestGenerator getInstance(ServiceRequest req){
 
         if(instances == null){
-            instances = new ArrayList<HttpRequestGenerator>();
+            instances = new ArrayList<>();
             instances.add(new HttpGetGenerator());
             instances.add(new HttpPostGenerator());
             instances.add(new HttpPutGenerator());

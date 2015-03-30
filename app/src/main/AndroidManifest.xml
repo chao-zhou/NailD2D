@@ -19,10 +19,6 @@
             android:name=".HomeActivity"
             android:label="@string/app_name" >
         </activity>
-        <activity
-            android:name=".PackageListActivity"
-            android:label="@string/title_activity_packagelist" >
-        </activity>
     </application>
 
     <uses-permission android:name="android.permission.INTERNET"/>

@@ -9,8 +9,8 @@ import com.naild2d.android.network.ServiceToken;
  */
 public class AccountService {
 
-    TokenApi tokenApi = null;
-    AccountApi accountApi = null;
+    private TokenApi tokenApi = null;
+    private AccountApi accountApi = null;
 
     public AccountService(){
         tokenApi = new TokenApi();
@@ -61,6 +61,6 @@ public class AccountService {
         String[] values = res.split("&");
 
         ServiceToken.REQUEST_TOKEN = values[0];
-        ServiceToken.CUSTOMER_SECRET = values[1];
+        ServiceToken.REQUEST_SECRET = values[1];
     }
 }

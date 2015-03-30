@@ -7,14 +7,14 @@ import com.naild2d.android.network.ServiceRequest;
  */
 public class MessageApi extends Api {
     //3.35
-    public String list(String user,boolean read, String type,int page_size, int page){
+    public String list(String user,boolean read, String type,int pageSize, int page){
         ServiceRequest req = new ServiceRequest("/notice");
         req.setMethod(ServiceRequest.METHOD_GET);
         req.setType(ServiceRequest.TYPE_ACCESS);
         addParams(req,"user",user);
         addParams(req,"read",String.valueOf(read));
         addParams(req,"type",type);
-        addParams(req,"page_size",String.valueOf(page_size));
+        addParams(req,"page_size",String.valueOf(pageSize));
         addParams(req,"page",String.valueOf(page));
         return getResponseString(req);
     }
