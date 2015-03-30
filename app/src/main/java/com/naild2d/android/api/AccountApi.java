@@ -21,7 +21,7 @@ public class AccountApi extends Api {
         ServiceRequest req = new ServiceRequest("/user/"+phone);
         req.setMethod(ServiceRequest.METHOD_PUT);
         req.setType(ServiceRequest.TYPE_PUBLIC);
-        addParams(req,"pwd",pwd);
+        addParams(req,"pw",pwd);
         addParams(req,"code",code);
         addParams(req,"ref",ref);
         return getResponseString(req);
@@ -33,7 +33,7 @@ public class AccountApi extends Api {
         req.setMethod(ServiceRequest.METHOD_POST);
         req.setType(ServiceRequest.TYPE_REQUEST);
         addParams(req,"phone",phone);
-        addParams(req,"pwd",pwd);
+        addParams(req,"pw",pwd);
         return getResponseString(req);
     }
 
