@@ -7,11 +7,11 @@ import com.naild2d.android.network.ServiceRequest;
  */
 public class OrderApi extends Api{
 
-    //3.17
-    public String order(double lat, double lon,
+    //-3.18
+    public String submit(double lat, double lon,
                         String location, String address,
                         String schedule, String pack, String services ,
-                        String remark){
+                        String remark, String coupon){
         ServiceRequest req = new ServiceRequest("/order");
         req.setMethod(ServiceRequest.METHOD_POST);
         req.setType(ServiceRequest.TYPE_ACCESS);
@@ -23,22 +23,11 @@ public class OrderApi extends Api{
         addParams(req,"pack",pack);
         addParams(req,"services",services);
         addParams(req,"remark",remark);
+        addParams(req,"coupon",coupon);
         return getResponseString(req);
     }
 
-    //3.31
-    public String list(String user, String status, int pageSize, int page){
-        ServiceRequest req = new ServiceRequest("/order");
-        req.setMethod(ServiceRequest.METHOD_POST);
-        req.setType(ServiceRequest.TYPE_ACCESS);
-        addParams(req,"lat",String.valueOf(pageSize));
-        addParams(req,"lon",String.valueOf(page));
-        addParams(req,"user",user);
-        addParams(req,"status",status);
-        return getResponseString(req);
-    }
-
-    //3.18
+    //-3.19
     public String status(String orderId){
         ServiceRequest req = new ServiceRequest("/order/"+orderId);
         req.setMethod(ServiceRequest.METHOD_GET);
@@ -46,17 +35,36 @@ public class OrderApi extends Api{
         return getResponseString(req);
     }
 
-
-
-    //3.21
-    public String cancel(String orderId,String user){
+    //-3.20
+    public String cancel(String orderId){
         ServiceRequest req = new ServiceRequest("/order/"+orderId);
         req.setMethod(ServiceRequest.METHOD_PUT);
         req.setType(ServiceRequest.TYPE_ACCESS);
-        addParams(req,"status","cancelled");
-        addParams(req,"user",user);
+        addParams(req,"act","cancel");
         return getResponseString(req);
     }
+
+    //-3.21
+    public String confirm(String orderId){
+        ServiceRequest req = new ServiceRequest("/order/"+orderId);
+        req.setMethod(ServiceRequest.METHOD_PUT);
+        req.setType(ServiceRequest.TYPE_ACCESS);
+        addParams(req,"act","confirm");
+        return getResponseString(req);
+    }
+
+    //-3.30
+    public String list(String status, int pageSize, int page){
+        ServiceRequest req = new ServiceRequest("/order");
+        req.setMethod(ServiceRequest.METHOD_POST);
+        req.setType(ServiceRequest.TYPE_ACCESS);
+        addParams(req,"lat",String.valueOf(pageSize));
+        addParams(req,"lon",String.valueOf(page));
+        addParams(req,"status",status);
+        return getResponseString(req);
+    }
+
+
 
 
 

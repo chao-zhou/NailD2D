@@ -7,7 +7,7 @@ import com.naild2d.android.network.ServiceRequest;
  */
 public class TokenApi extends Api {
 
-    //3.4
+    //-3.4
     public String getRequestToken(){
         ServiceRequest req = new ServiceRequest("/token");
         req.setMethod(ServiceRequest.METHOD_POST);
@@ -15,7 +15,7 @@ public class TokenApi extends Api {
         return getResponseString(req);
     }
 
-    //3.6
+    //-3.6
     public String getAccessToken(){
         ServiceRequest req = new ServiceRequest("/exchange");
         req.setMethod(ServiceRequest.METHOD_GET);

@@ -7,10 +7,10 @@ import com.naild2d.android.network.ServiceRequest;
  */
 public class EvaluationApi extends Api {
 
-    //3.28
+    //-3.27
     public String post(String order,
                        float post,float attitude,float quality,float punctual,
-                       String comment,String user){
+                       String comment){
         ServiceRequest req = new ServiceRequest("/evaluation");
         req.setMethod(ServiceRequest.METHOD_POST);
         req.setType(ServiceRequest.TYPE_ACCESS);
@@ -20,14 +20,13 @@ public class EvaluationApi extends Api {
         addParams(req,"quality",String.valueOf(quality));
         addParams(req,"punctual",String.valueOf(punctual));
         addParams(req,"comment",comment);
-        addParams(req,"user",user);
         return getResponseString(req);
     }
 
-    //3.29
+    //-3.28
     public String update(String order,
                          float post,float attitude,float quality,float punctual,
-                         String comment,String user){
+                         String comment){
         ServiceRequest req = new ServiceRequest("/evaluation/"+order);
         req.setMethod(ServiceRequest.METHOD_PUT);
         req.setType(ServiceRequest.TYPE_ACCESS);
@@ -36,11 +35,10 @@ public class EvaluationApi extends Api {
         addParams(req,"quality",String.valueOf(quality));
         addParams(req,"punctual",String.valueOf(punctual));
         addParams(req,"comment",comment);
-        addParams(req,"user",user);
         return getResponseString(req);
     }
 
-    //3.30
+    //-3.29
     public String update(String order){
         ServiceRequest req = new ServiceRequest("/evaluation/"+order);
         req.setMethod(ServiceRequest.METHOD_GET);

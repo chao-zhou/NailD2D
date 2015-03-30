@@ -7,7 +7,7 @@ import com.naild2d.android.network.ServiceRequest;
  */
 public class PackageApi extends Api {
 
-    //3.9
+    //-3.9
     public String list(double lat,double lon, int pageSize, int page){
         ServiceRequest req = new ServiceRequest("/pack");
         req.setMethod(ServiceRequest.METHOD_GET);
@@ -19,7 +19,7 @@ public class PackageApi extends Api {
         return getResponseString(req);
     }
 
-    //3.11
+    //-3.11
     public String getServiceList(String pack, int pageSize, int page){
         ServiceRequest req = new ServiceRequest("/service");
         req.setMethod(ServiceRequest.METHOD_GET);
@@ -30,7 +30,7 @@ public class PackageApi extends Api {
         return getResponseString(req);
     }
 
-    //3.13
+    //-3.13
     public String getEvaluation(String pack, int pageSize, int page){
         ServiceRequest req = new ServiceRequest("/evaluation");
         req.setMethod(ServiceRequest.METHOD_GET);
@@ -41,7 +41,7 @@ public class PackageApi extends Api {
         return getResponseString(req);
     }
 
-    //3.14
+    //-3.14
     public  String getService(String id){
         ServiceRequest req = new ServiceRequest("/service/"+id);
         req.setMethod(ServiceRequest.METHOD_GET);
@@ -50,7 +50,7 @@ public class PackageApi extends Api {
     }
 
 
-    //3.16
+    //-3.16
     public String getSchedule(String pack){
         ServiceRequest req = new ServiceRequest("/schedule");
         req.setMethod(ServiceRequest.METHOD_GET);
