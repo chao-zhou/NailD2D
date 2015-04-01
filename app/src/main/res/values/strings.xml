@@ -6,5 +6,6 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_home">HomeActivity</string>
     <string name="title_activity_packagelist">PackagelistActivity</string>
+    <string name="title_activity_package_detail">PackageDetailActivity</string>
 
 </resources>
