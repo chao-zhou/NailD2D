@@ -7,5 +7,6 @@
     <string name="title_activity_home">HomeActivity</string>
     <string name="title_activity_packagelist">PackagelistActivity</string>
     <string name="title_activity_package_detail">PackageDetailActivity</string>
+    <string name="title_activity_pending_order_list">PendingOrderList</string>
 
 </resources>

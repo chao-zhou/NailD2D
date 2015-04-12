@@ -2,6 +2,7 @@ package com.naild2d.android;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.StrictMode;
@@ -9,14 +10,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.SimpleAdapter;
 
 import com.naild2d.android.service.AccountService;
-
-import java.util.ArrayList;
-import java.util.HashMap;
 
 
 public class MainActivity extends Activity {
@@ -30,25 +26,16 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_main);
-        setContentView(R.layout.activity_packagelist);
+        setContentView(R.layout.activity_main);
 
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
-        list = (ListView)findViewById(R.id.pkgls_list);
-        ArrayList<HashMap<String,String>> data = new ArrayList<>();
-        HashMap<String, String> map = new HashMap<>();
-        map.put("shop","shop test");
-        data.add(map);
+        Intent intent = new Intent(this,PendingOrderList.class);
+        this.startActivity(intent);
 
-
-        ListAdapter adapter = new SimpleAdapter(this,data,R.layout.item_packge,new String[]{"shop"},new int[] {R.id.pkg_item_name});
-        list.setAdapter(adapter);
-
-        //editCode  = (EditText)findViewById(R.id.txtCode);
-
-        //accountService = new AccountService();
+        editCode  = (EditText)findViewById(R.id.txtCode);
+        accountService = new AccountService();
     }
 
 

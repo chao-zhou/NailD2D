@@ -26,6 +26,10 @@
             android:name=".PackageDetailActivity"
             android:label="@string/title_activity_package_detail" >
         </activity>
+        <activity
+            android:name=".PendingOrderList"
+            android:label="@string/title_activity_pending_order_list" >
+        </activity>
     </application>
 
 </manifest>

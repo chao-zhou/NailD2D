@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FF0000">
+    <ImageView
+        android:layout_width="12dp"
+        android:layout_height="16dp"
+        android:scaleType="centerInside"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/icon_yuan_black"/>
+    <TextView
+        android:id="@+id/component_price_textview_price"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:textColor="#000000"
+        android:textSize="23sp"
+        android:layout_marginLeft="3dp"
+        android:text="0.00"/>
+</LinearLayout>
