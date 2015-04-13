@@ -39,4 +39,10 @@ public class PriceTextView extends LinearLayout {
         priceTextView.setText(priceText);
         a.recycle();
     }
+
+    public void setPrice(String price){
+        priceTextView.setText(price);
+        invalidate();
+        requestLayout();
+    }
 }
