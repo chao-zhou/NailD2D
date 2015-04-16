@@ -4,11 +4,11 @@
     android:layout_height="match_parent">
     <ImageView
         android:id="@+id/component_image_text_view_image"
-        android:layout_width="28dp"
-        android:layout_height="28dp"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
         android:scaleType="centerInside"
         android:layout_gravity="center_vertical"
-        android:background="@drawable/pkgls_icon_name_normal"/>
+        android:background="@android:color/transparent"/>
     <TextView
         android:id="@+id/component_image_text_view_text"
         android:layout_width="wrap_content"
@@ -16,6 +16,6 @@
         android:layout_gravity="center_vertical"
         android:textColor="#DDDDDD"
         android:text="ImageTextView"
-        android:textSize="22sp"
-        android:layout_marginLeft="10dp"/>
+        android:textSize="20sp"
+        android:layout_marginLeft="3dp"/>
 </LinearLayout>
