@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:background="@android:color/transparent">
     <ImageView
+        android:id="@+id/component_price_textView_yuan"
         android:layout_width="8dp"
         android:layout_height="11dp"
         android:scaleType="centerInside"

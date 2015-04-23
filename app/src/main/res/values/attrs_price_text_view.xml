@@ -1,5 +1,6 @@
 <resources>
     <declare-styleable name="PriceTextView">
         <attr name="price" format="string" />
+        <attr name="yuan_size" format="integer"/>
     </declare-styleable>
 </resources>

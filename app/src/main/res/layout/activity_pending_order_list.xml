@@ -18,7 +18,7 @@
         android:orientation="horizontal"
         android:layout_marginBottom="10dp"
         android:paddingTop="5dp"
-        android:background="@drawable/pkgls_top_bar">
+        android:background="@drawable/banner_top_green">
 
         <ImageButton
             android:layout_width="22dp"
@@ -98,6 +98,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:price="200.00"
+                app:textSize="16"
                 android:layout_centerInParent="true"
                 android:layout_toLeftOf="@+id/editText"
                 android:layout_toStartOf="@+id/editText"
