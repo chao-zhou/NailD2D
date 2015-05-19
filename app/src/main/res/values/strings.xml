@@ -9,5 +9,6 @@
     <string name="title_activity_package_detail">PackageDetailActivity</string>
     <string name="title_activity_pending_order_list">PendingOrderList</string>
     <string name="title_activity_order_details">OrderDetails</string>
+    <string name="title_activity_order_address">OrderAddressActivity</string>
 
 </resources>
