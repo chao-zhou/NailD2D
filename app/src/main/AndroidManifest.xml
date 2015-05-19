@@ -38,6 +38,10 @@
             android:name=".OrderAddressActivity"
             android:label="@string/title_activity_order_address" >
         </activity>
+        <activity
+            android:name=".OrderCommentActivity"
+            android:label="@string/title_activity_order_comment" >
+        </activity>
     </application>
 
 </manifest>
