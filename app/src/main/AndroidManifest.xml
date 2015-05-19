@@ -26,7 +26,7 @@
             android:label="@string/title_activity_pending_order_list" >
         </activity>
         <activity
-            android:name=".OrderDetails"
+            android:name=".OrderDetailsActivity"
             android:label="@string/title_activity_order_details" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
