@@ -26,7 +26,7 @@ public class PriceTextView extends LinearLayout {
     public PriceTextView(Context context, AttributeSet attrs) {
         super(context, attrs);
         LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        inflater.inflate(R.layout.component_price_textview,this);
+        inflater.inflate(R.layout.component_price_text_view,this);
         priceTextView = (TextView)findViewById(R.id.component_price_textview_price);
         imageView = (ImageView)findViewById(R.id.component_price_textView_yuan);
         init(attrs);
