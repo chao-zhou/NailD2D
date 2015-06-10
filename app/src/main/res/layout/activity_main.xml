@@ -1,4 +1,5 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,36 +10,49 @@
     tools:context=".MainActivity">
 
     <EditText
+        android:id="@+id/txtCode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/txtCode"
-        android:layout_below="@+id/btnCode"
-        android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/btnCode" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Code"
         android:id="@+id/btnCode"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/txtCode"
-        android:layout_alignEnd="@+id/txtCode"
-        android:onClick="code"/>
-
-    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New"
+        android:layout_alignEnd="@+id/txtCode"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/txtCode"
+        android:onClick="code"
+        android:text="Code" />
+
+    <Button
         android:id="@+id/btnNew"
-        android:layout_below="@+id/txtCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/txtCode"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignRight="@+id/txtCode"
-        android:layout_alignEnd="@+id/txtCode"
-        android:onClick="newUser"/>
+        android:layout_below="@+id/txtCode"
+        android:onClick="newUser"
+        android:text="New" />
+    <!--
+       <com.naild2d.android.component.OrderDatePanelView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+
+           </com.naild2d.android.component.OrderDatePanelView>
+   -->
+    <com.naild2d.android.component.ServiceThumbnailView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:integer_price="126"
+        app:name="####"
+        app:thumbnail="#FF0000" />
 </RelativeLayout>

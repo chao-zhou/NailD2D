@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ImageTextView">
+        <attr name="image" format="color|reference" />
+        <attr name="image_height" format="dimension" />
+        <attr name="image_width" format="dimension" />
+
+        <attr name="text" format="string" />
+        <attr name="textSize" format="integer" />
+        <attr name="textColor" format="color" />
+
+        <attr name="inline_margin" format="dimension" />
+    </declare-styleable>
+    <declare-styleable name="PriceTextView">
+        <attr name="price" format="string" />
+        <attr name="yuan_size" format="integer" />
+    </declare-styleable>
+    <declare-styleable name="ServiceThumbnailView">
+        <attr name="integer_price" format="string" />
+        <attr name="name" format="string" />
+        <attr name="thumbnail" format="color|reference" />
+    </declare-styleable>
+</resources>
