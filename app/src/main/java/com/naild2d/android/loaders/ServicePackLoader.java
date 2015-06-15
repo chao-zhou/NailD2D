@@ -3,19 +3,19 @@ package com.naild2d.android.loaders;
 import android.content.Context;
 import android.support.v4.content.AsyncTaskLoader;
 
-import com.naild2d.android.model.PackageListItem;
+import com.naild2d.android.service.ServicePack;
 
 /**
  * Created by ebread on 2015/3/21.
  */
-public class PackageListLoader extends AsyncTaskLoader<PackageListItem> {
+public class ServicePackLoader extends AsyncTaskLoader<ServicePack> {
 
-    public PackageListLoader(Context context) {
+    public ServicePackLoader(Context context) {
         super(context);
     }
 
     @Override
-    public PackageListItem loadInBackground() {
+    public ServicePack loadInBackground() {
         return null;
     }
 }

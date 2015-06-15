@@ -23,8 +23,8 @@ public class ServiceRequest {
     public static final String TYPE_ACCESS = "ACCESS";
     public static final String TYPE_NOAUTH = "NOAUTH";
 
-    public static final String siteURL = "http://drk.igalaxy.com.cn/api";
-    //public static final String siteURL = "http://10.0.0.13/api";
+    //public static final String siteURL = "http://drk.igalaxy.com.cn/api";
+    public static final String siteURL = "http://115.29.146.62/api";
 
     private String relativeURI;
     private String method; //"GET", "PUT" ,"POST","DELETE"
@@ -33,7 +33,7 @@ public class ServiceRequest {
     private List<NameValuePair> params;
     private String type; // "PUBLIC","PERSONAL"
 
-    public ServiceRequest(String uri){
+    public ServiceRequest(String uri) {
         relativeURI = uri;
         method = METHOD_GET;
         type = TYPE_PUBLIC;
@@ -42,16 +42,16 @@ public class ServiceRequest {
         params = new ArrayList<>();
     }
 
-    public HttpUriRequest getHttpRequest(){
+    public HttpUriRequest getHttpRequest() {
 
         HttpRequestGenerator generator = HttpRequestGenerator.getInstance(this);
-        if(generator == null)
+        if (generator == null)
             return null;
 
         return generator.getHttpRequest(this);
     }
 
-    public String getFullURI(){
+    public String getFullURI() {
         return String.format("%s%s", siteURL, relativeURI);
     }
 
@@ -71,7 +71,7 @@ public class ServiceRequest {
         this.method = method;
     }
 
-    public  List<NameValuePair> getOAuthValues() {
+    public List<NameValuePair> getOAuthValues() {
         return oAuthValues;
     }
 
@@ -83,7 +83,7 @@ public class ServiceRequest {
         return params;
     }
 
-    public void setParams( List<NameValuePair> params) {
+    public void setParams(List<NameValuePair> params) {
         this.params = params;
     }
 

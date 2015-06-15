@@ -5,29 +5,39 @@ import com.naild2d.android.json.IndexJsonObject;
 import com.naild2d.android.log.Logger;
 import com.naild2d.android.model.Advertisement;
 
-import org.json.JSONException;
-
-import java.lang.reflect.InvocationTargetException;
-
 /**
  * Created by chaozhou on 3/17/2015.
  */
 public class ImageService {
+
+    public static final String DEVICE_IPHONE_X2 = "ix2";
+    public static final String DEVICE_IPHONE_X3 = "ix3";
+    public static final String DEVICE_ANDROID_LOW = "al";
+    public static final String DEVICE_ANDROID_HIGH = "ah";
+
     private ImageApi imageApi = null;
 
-    public ImageService(){
+    public ImageService() {
         imageApi = new ImageApi();
     }
 
-    public Advertisement[] getAdvs(){
+    public Advertisement[] getAdvs() {
         String jString = imageApi.getAds();
         try {
             IndexJsonObject json = new IndexJsonObject(jString);
             return json.getObjectArray(Advertisement.class);
-        } catch (JSONException | IllegalAccessException | InstantiationException | NoSuchMethodException | InvocationTargetException e) {
+        } catch (Exception e) {
             Logger.e(e);
         }
 
         return null;
+    }
+
+    public byte[] getThumbnail(String id) {
+        return imageApi.getThumbnail(id);
+    }
+
+    public byte[] getImage(String id, String device) {
+        return imageApi.getImage(id, device);
     }
 }
