@@ -1,4 +1,4 @@
-package com.naild2d.android.model;
+package com.naild2d.android.model.order;
 
 import com.naild2d.android.json.JsonWrapper;
 
@@ -8,14 +8,12 @@ import org.json.JSONObject;
 /**
  * Created by ebread on 2015/6/15.
  */
-public class UserProfile extends JsonWrapper {
-
+public class OrderUser extends JsonWrapper {
     private String nickName;
     private String avatar;
     private String phone;
-    private String verifier;
 
-    public UserProfile(JSONObject json) throws JSONException {
+    public OrderUser(JSONObject json) throws JSONException {
         super(json);
     }
 
@@ -24,7 +22,6 @@ public class UserProfile extends JsonWrapper {
         nickName = json.getString("nickname");
         avatar = json.getString("avatar");
         phone = json.getString("phone");
-        verifier = json.getString("verifier");
     }
 
     public String getNickName() {
@@ -50,14 +47,5 @@ public class UserProfile extends JsonWrapper {
     public void setPhone(String phone) {
         this.phone = phone;
     }
-
-    public String getVerifier() {
-        return verifier;
-    }
-
-    public void setVerifier(String verifier) {
-        this.verifier = verifier;
-    }
-
 
 }

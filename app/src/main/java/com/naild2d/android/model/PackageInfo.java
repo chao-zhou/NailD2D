@@ -8,7 +8,7 @@ import org.json.JSONObject;
 /**
  * Created by ebread on 2015/3/21.
  */
-public class ServicePackage extends JsonWrapper {
+public class PackageInfo extends JsonWrapper {
 
     private int id;
     private String title;
@@ -24,7 +24,7 @@ public class ServicePackage extends JsonWrapper {
     private double ecount;
     private int served;
 
-    protected ServicePackage(JSONObject json) throws JSONException {
+    public PackageInfo(JSONObject json) throws JSONException {
         super(json);
     }
 

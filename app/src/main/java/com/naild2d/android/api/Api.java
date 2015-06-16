@@ -17,7 +17,12 @@ import java.io.IOException;
  */
 abstract class Api {
 
-    String getResponseString(ServiceRequest req){
+    HttpResponse getResponse(ServiceRequest req) {
+        HttpResponse res = ServiceClient.getClient().execute(req);
+        return res;
+    }
+
+    String getResponseString(ServiceRequest req) {
         HttpResponse res = ServiceClient.getClient().execute(req);
         try {
             //ServiceError.riseError(res.getStatusLine().getStatusCode());
@@ -29,7 +34,7 @@ abstract class Api {
         }
     }
 
-    byte[] getResponseBytes(ServiceRequest req){
+    byte[] getResponseBytes(ServiceRequest req) {
         HttpResponse res = ServiceClient.getClient().execute(req);
         ByteArrayOutputStream s = new ByteArrayOutputStream();
         try {
@@ -38,13 +43,13 @@ abstract class Api {
         } catch (IOException e) {
             Logger.e(e);
         }
-        return  null;
+        return null;
     }
 
-    void addParams(ServiceRequest req, String name, String value){
-        if(name == null || value == null)
+    void addParams(ServiceRequest req, String name, String value) {
+        if (name == null || value == null)
             return;
 
-        req.getParams().add(new BasicNameValuePair(name,value));
+        req.getParams().add(new BasicNameValuePair(name, value));
     }
 }

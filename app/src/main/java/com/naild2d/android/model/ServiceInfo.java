@@ -8,7 +8,7 @@ import org.json.JSONObject;
 /**
  * Created by ebread on 2015/6/15.
  */
-public class Service extends JsonWrapper {
+public class ServiceInfo extends JsonWrapper {
     private int id;
     private String name;
     private int pic;
@@ -17,7 +17,7 @@ public class Service extends JsonWrapper {
     private int wty;
     private int served;
 
-    protected Service(JSONObject json) throws JSONException {
+    public ServiceInfo(JSONObject json) throws JSONException {
         super(json);
     }
 

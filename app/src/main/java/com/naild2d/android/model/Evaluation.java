@@ -17,7 +17,7 @@ public class Evaluation extends JsonWrapper {
     private String comment;
     private int[] pics;
 
-    protected Evaluation(JSONObject json) throws JSONException {
+    public Evaluation(JSONObject json) throws JSONException {
         super(json);
     }
 
