@@ -1,6 +1,6 @@
 package com.naild2d.android.model;
 
-import com.naild2d.android.json.IndexJsonObject;
+import com.naild2d.android.json.IndexJSONObject;
 import com.naild2d.android.json.JsonWrapper;
 
 import org.json.JSONException;
@@ -28,7 +28,7 @@ public class Evaluation extends JsonWrapper {
         time = json.getString("time");
         comment = json.getString("comment");
         user = new UserProfile(json.getJSONObject("user"));
-        pics = new IndexJsonObject(json.getString("pics")).getIntArray();
+        pics = new IndexJSONObject(json.getString("pics")).getIntArray();
     }
 
     public int getId() {

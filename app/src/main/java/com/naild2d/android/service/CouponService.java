@@ -1,7 +1,7 @@
 package com.naild2d.android.service;
 
 import com.naild2d.android.api.CouponApi;
-import com.naild2d.android.json.IndexJsonObject;
+import com.naild2d.android.json.IndexJSONObject;
 import com.naild2d.android.log.Logger;
 import com.naild2d.android.model.CouponInfo;
 
@@ -18,7 +18,7 @@ public class CouponService {
     public CouponInfo[] getOnDoorCoupons(int page, int pageSize) {
         String jString = couponApi.getOnDoorCoupon(pageSize, page);
         try {
-            IndexJsonObject json = new IndexJsonObject(jString);
+            IndexJSONObject json = new IndexJSONObject(jString);
             return json.getObjectArray(CouponInfo.class);
         } catch (Exception e) {
             Logger.e(e);

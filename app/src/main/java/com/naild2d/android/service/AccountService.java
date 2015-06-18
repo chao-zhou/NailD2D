@@ -2,7 +2,7 @@ package com.naild2d.android.service;
 
 import com.naild2d.android.api.AccountApi;
 import com.naild2d.android.api.TokenApi;
-import com.naild2d.android.json.IndexJsonObject;
+import com.naild2d.android.json.IndexJSONObject;
 import com.naild2d.android.log.Logger;
 import com.naild2d.android.model.UserProfile;
 import com.naild2d.android.network.ServiceToken;
@@ -44,7 +44,7 @@ public class AccountService {
 
         String jString = accountApi.profile(phone, pwd);
         try {
-            IndexJsonObject json = new IndexJsonObject(jString);
+            IndexJSONObject json = new IndexJSONObject(jString);
             return json.getObject(UserProfile.class);
         } catch (Exception e) {
             Logger.e(e);

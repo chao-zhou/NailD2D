@@ -1,7 +1,7 @@
 package com.naild2d.android.service;
 
 import com.naild2d.android.api.ImageApi;
-import com.naild2d.android.json.IndexJsonObject;
+import com.naild2d.android.json.IndexJSONObject;
 import com.naild2d.android.log.Logger;
 import com.naild2d.android.model.Advertisement;
 
@@ -24,7 +24,7 @@ public class ImageService {
     public Advertisement[] getAdvs() {
         String jString = imageApi.getAds();
         try {
-            IndexJsonObject json = new IndexJsonObject(jString);
+            IndexJSONObject json = new IndexJSONObject(jString);
             return json.getObjectArray(Advertisement.class);
         } catch (Exception e) {
             Logger.e(e);
