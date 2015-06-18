@@ -7,12 +7,11 @@ import com.naild2d.android.network.ServiceRequest;
  */
 public class PaymentApi extends Api {
     //-3.22
-    public String pay(String orderId,String user){
+    public String pay(String orderId) {
         ServiceRequest req = new ServiceRequest("/payment");
         req.setMethod(ServiceRequest.METHOD_GET);
         req.setType(ServiceRequest.TYPE_ACCESS);
-        addParams(req,"order",orderId);
-        addParams(req,"user",user);
+        addParams(req, "order", orderId);
         return getResponseString(req);
     }
 }

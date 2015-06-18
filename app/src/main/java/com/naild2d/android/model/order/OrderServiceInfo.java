@@ -8,12 +8,12 @@ import org.json.JSONObject;
 /**
  * Created by ebread on 2015/6/16.
  */
-public class OrderService extends JsonWrapper {
+public class OrderServiceInfo extends JsonWrapper {
     private int id;
     private String name;
     private int thumbnail;
 
-    public OrderService(JSONObject json) throws JSONException {
+    public OrderServiceInfo(JSONObject json) throws JSONException {
         super(json);
     }
 

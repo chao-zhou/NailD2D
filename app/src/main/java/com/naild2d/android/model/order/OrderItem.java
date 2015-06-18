@@ -10,7 +10,7 @@ import org.json.JSONObject;
  */
 public class OrderItem extends JsonWrapper {
     private int id;
-    private OrderService service;
+    private OrderServiceInfo service;
     private double price;
 
     public OrderItem(JSONObject json) throws JSONException {
@@ -21,7 +21,7 @@ public class OrderItem extends JsonWrapper {
     protected void wrap(JSONObject json) throws JSONException {
         id = json.getInt("id");
         String jString = json.getString("service");
-        service = new OrderService(new JSONObject(jString));
+        service = new OrderServiceInfo(new JSONObject(jString));
         price = json.getDouble("price");
     }
 
@@ -33,11 +33,11 @@ public class OrderItem extends JsonWrapper {
         this.id = id;
     }
 
-    public OrderService getService() {
+    public OrderServiceInfo getService() {
         return service;
     }
 
-    public void setService(OrderService service) {
+    public void setService(OrderServiceInfo service) {
         this.service = service;
     }
 

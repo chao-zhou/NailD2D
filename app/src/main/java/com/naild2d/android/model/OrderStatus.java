@@ -1,6 +1,6 @@
 package com.naild2d.android.model;
 
-import com.naild2d.android.json.IndexJsonObject;
+import com.naild2d.android.json.IndexJSONObject;
 import com.naild2d.android.json.JsonWrapper;
 import com.naild2d.android.model.order.OrderItem;
 import com.naild2d.android.model.order.OrderPackageInfo;
@@ -13,7 +13,7 @@ import org.json.JSONObject;
 /**
  * Created by ebread on 2015/6/16.
  */
-public class ConfirmedOrder extends JsonWrapper {
+public class OrderStatus extends JsonWrapper {
     private int id;
     private double lat;
     private double lon;
@@ -32,7 +32,7 @@ public class ConfirmedOrder extends JsonWrapper {
     private double price;
     private String status;
 
-    public ConfirmedOrder(JSONObject json) throws JSONException {
+    public OrderStatus(JSONObject json) throws JSONException {
         super(json);
     }
 
@@ -60,7 +60,7 @@ public class ConfirmedOrder extends JsonWrapper {
 
         jString = json.getString("orderItems");
         try {
-            orderItems = new IndexJsonObject(jString).getObjectArray(OrderItem.class);
+            orderItems = new IndexJSONObject(jString).getObjectArray(OrderItem.class);
         } catch (Exception e) {
             e.printStackTrace();
         }

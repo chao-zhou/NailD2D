@@ -1,7 +1,7 @@
 package com.naild2d.android.service;
 
 import com.naild2d.android.api.PackageApi;
-import com.naild2d.android.json.IndexJsonObject;
+import com.naild2d.android.json.IndexJSONObject;
 import com.naild2d.android.log.Logger;
 import com.naild2d.android.model.PackageInfo;
 import com.naild2d.android.model.PackageScheduleInfo;
@@ -21,7 +21,7 @@ public class PackageService {
     public PackageInfo[] getPackageInfo(double lat, double lon, int pageSize, int page) {
         String jString = packageApi.list(lat, lon, pageSize, page);
         try {
-            IndexJsonObject json = new IndexJsonObject(jString);
+            IndexJSONObject json = new IndexJSONObject(jString);
             return json.getObjectArray(PackageInfo.class);
         } catch (Exception e) {
             Logger.e(e);
@@ -32,7 +32,7 @@ public class PackageService {
     public ServiceInfo getServiceInfo(String serviceId) {
         String jString = packageApi.getService(serviceId);
         try {
-            IndexJsonObject json = new IndexJsonObject(jString);
+            IndexJSONObject json = new IndexJSONObject(jString);
             return json.getObject(ServiceInfo.class);
         } catch (Exception e) {
             Logger.e(e);
@@ -43,7 +43,7 @@ public class PackageService {
     public PackageScheduleInfo[] getScheduleInfo(String packageId) {
         String jString = packageApi.getSchedule(packageId);
         try {
-            IndexJsonObject json = new IndexJsonObject(jString);
+            IndexJSONObject json = new IndexJSONObject(jString);
             return json.getObjectArray(PackageScheduleInfo.class);
         } catch (Exception e) {
             Logger.e(e);

@@ -1,9 +1,10 @@
 package com.naild2d.android.service;
 
 import com.naild2d.android.api.OrderApi;
-import com.naild2d.android.json.IndexJsonObject;
+import com.naild2d.android.api.PaymentApi;
+import com.naild2d.android.json.IndexJSONObject;
 import com.naild2d.android.log.Logger;
-import com.naild2d.android.model.ConfirmedOrder;
+import com.naild2d.android.model.OrderStatus;
 import com.naild2d.android.service.params.SubmitOrderParam;
 
 import org.json.JSONObject;
@@ -13,9 +14,11 @@ import org.json.JSONObject;
  */
 public class OrderService {
     private OrderApi orderApi = null;
+    private PaymentApi paymentApi = null;
 
     public OrderService() {
         orderApi = new OrderApi();
+        paymentApi = new PaymentApi();
     }
 
     public int submitOrder(SubmitOrderParam param) {
@@ -36,11 +39,11 @@ public class OrderService {
         return -1;
     }
 
-    public ConfirmedOrder confirmedOrder(int orderId) {
-        String jString = orderApi.confirm(String.valueOf(orderId));
+    public OrderStatus getOrderStatus(int orderId) {
+        String jString = orderApi.status(String.valueOf(orderId));
         try {
-            IndexJsonObject json = new IndexJsonObject(jString);
-            return json.getObject(ConfirmedOrder.class);
+            IndexJSONObject json = new IndexJSONObject(jString);
+            return json.getObject(OrderStatus.class);
         } catch (Exception e) {
             Logger.e(e);
         }
@@ -49,5 +52,24 @@ public class OrderService {
 
     public boolean cancelOrder(int orderId) {
         return orderApi.cancel(String.valueOf(orderId));
+    }
+
+    public boolean confirmOrder(int orderId) {
+        return orderApi.confirm(String.valueOf(orderId));
+    }
+
+    public String payOrder(int orderId) {
+        String jString = paymentApi.pay(String.valueOf(orderId));
+        try {
+            JSONObject json = new JSONObject(jString);
+            return json.getString("orderString");
+        } catch (Exception e) {
+            Logger.e(e);
+        }
+        return null;
+    }
+
+    public boolean completeOrder(int orderId) {
+        return orderApi.complete(String.valueOf(orderId));
     }
 }

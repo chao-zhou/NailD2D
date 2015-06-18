@@ -45,13 +45,23 @@ public class OrderApi extends Api {
     }
 
     //-3.21
-    public String confirm(String orderId) {
+    public boolean confirm(String orderId) {
         ServiceRequest req = new ServiceRequest("/order/" + orderId);
         req.setMethod(ServiceRequest.METHOD_PUT);
         req.setType(ServiceRequest.TYPE_ACCESS);
         addParams(req, "act", "confirm");
-        return getResponseString(req);
+        return getResponse(req).getStatusLine().getStatusCode() == 204;
     }
+
+    //3.24
+    public boolean complete(String orderId) {
+        ServiceRequest req = new ServiceRequest("/order/" + orderId);
+        req.setMethod(ServiceRequest.METHOD_PUT);
+        req.setType(ServiceRequest.TYPE_ACCESS);
+        addParams(req, "act", "complete");
+        return getResponse(req).getStatusLine().getStatusCode() == 204;
+    }
+
 
     //-3.30
     public String list(String status, int pageSize, int page) {
