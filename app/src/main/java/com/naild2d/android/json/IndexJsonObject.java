@@ -12,11 +12,11 @@ import java.util.List;
 /**
  * Created by chaozhou on 3/17/2015.
  */
-public class IndexJsonObject {
+public class IndexJSONObject {
 
     private JSONObject json = null;
 
-    public IndexJsonObject(String jsonStr) throws JSONException {
+    public IndexJSONObject(String jsonStr) throws JSONException {
         json = new JSONObject(jsonStr);
     }
 
