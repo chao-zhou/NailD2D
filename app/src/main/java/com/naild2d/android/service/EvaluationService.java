@@ -5,6 +5,7 @@ import com.naild2d.android.api.PackageApi;
 import com.naild2d.android.json.IndexJSONObject;
 import com.naild2d.android.log.Logger;
 import com.naild2d.android.model.Evaluation;
+import com.naild2d.android.model.PackageEvaluationInfo;
 import com.naild2d.android.service.params.EvaluationParam;
 
 import org.json.JSONObject;
@@ -21,11 +22,11 @@ public class EvaluationService {
         packageApi = new PackageApi();
     }
 
-    public Evaluation[] getEvaluations(String pack, int page_size, int page) {
+    public PackageEvaluationInfo[] getPackageEvaluations(String pack, int page_size, int page) {
         String jString = packageApi.getEvaluation(pack, page_size, page);
         try {
             IndexJSONObject json = new IndexJSONObject(jString);
-            return json.getObjectArray(Evaluation.class);
+            return json.getObjectArray(PackageEvaluationInfo.class);
         } catch (Exception e) {
             Logger.e(e);
         }
@@ -67,5 +68,17 @@ public class EvaluationService {
         }
 
         return false;
+    }
+
+    public Evaluation getEvaluation(int id) {
+        String jString = evaluationApi.get(id);
+        try {
+            IndexJSONObject json = new IndexJSONObject(jString);
+            return json.getObject(Evaluation.class);
+        } catch (Exception e) {
+            Logger.e(e);
+        }
+
+        return null;
     }
 }

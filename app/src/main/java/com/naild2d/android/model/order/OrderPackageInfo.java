@@ -28,7 +28,8 @@ public class OrderPackageInfo extends JsonWrapper {
         id = json.getInt("id");
         title = json.getString("title");
         thumbnail = json.getInt("thumbnail");
-        wty = json.getInt("wty");
+        price = json.optDouble("price", 0);
+        wty = json.optInt("wty", 0);
         String jString = json.getString("shop");
         shop = new OrderShop(new JSONObject(jString));
     }
