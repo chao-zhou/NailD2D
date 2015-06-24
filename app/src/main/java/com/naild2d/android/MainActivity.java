@@ -2,7 +2,6 @@ package com.naild2d.android;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.StrictMode;
@@ -12,12 +11,12 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ListView;
 
-import com.naild2d.android.service.AccountService;
+import com.naild2d.android.service_test.ServiceTest;
+import com.naild2d.android.service_test.ServiceTestContext;
 
 
 public class MainActivity extends Activity {
 
-    private AccountService accountService;
     private EditText editCode;
     private ListView list;
 
@@ -31,11 +30,9 @@ public class MainActivity extends Activity {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
-        Intent intent = new Intent(this,PendingOrderList.class);
-        this.startActivity(intent);
-
+      /*  Intent intent = new Intent(this,PendingOrderList.class);
+        this.startActivity(intent);*/
         editCode  = (EditText)findViewById(R.id.txtCode);
-        accountService = new AccountService();
     }
 
 
@@ -62,14 +59,17 @@ public class MainActivity extends Activity {
     }
 
 
-
-
     public void code(View v){
-        accountService.getCertCode("18600406362");
+        //accountService.getCertCode("18600406362");
     }
 
     public void newUser(View v){
         String code = editCode.getText().toString();
-        accountService.register("18600406362","841111",code,"");
+        //accountService.register("18600406362","841111",code,"");
+    }
+
+    public void testApi(View v) {
+        ServiceTestContext context = new ServiceTestContext();
+        ServiceTest.RunTest(context);
     }
 }

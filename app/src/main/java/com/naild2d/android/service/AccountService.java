@@ -6,6 +6,7 @@ import com.naild2d.android.json.IndexJSONObject;
 import com.naild2d.android.log.Logger;
 import com.naild2d.android.model.UserProfile;
 import com.naild2d.android.network.ServiceToken;
+import com.naild2d.android.network.http.HttpPostBody;
 
 /**
  * Created by chaozhou on 3/17/2015.
@@ -54,15 +55,13 @@ public class AccountService {
     }
 
     private void getAccessToken(String phone, String pwd) {
-        accountApi.profile(phone, pwd);
+        getProfile(phone, pwd);
 
         String res = tokenApi.getAccessToken();
-        res = res.replace("oauth_token=", "");
-        res = res.replace("oauth_token_secret=", "");
-        String[] values = res.split("&");
+        HttpPostBody postBody = new HttpPostBody(res);
 
-        ServiceToken.ACCESS_TOKEN = values[0];
-        ServiceToken.ACCESS_SECRET = values[1];
+        ServiceToken.ACCESS_TOKEN = postBody.getValue("oauth_token");
+        ServiceToken.ACCESS_SECRET = postBody.getValue("oauth_token_secret");
 
         ServiceToken.save();
     }
@@ -72,11 +71,9 @@ public class AccountService {
             return;
 
         String res = tokenApi.getRequestToken();
-        res = res.replace("oauth_token=", "");
-        res = res.replace("oauth_token_secret=", "");
-        String[] values = res.split("&");
+        HttpPostBody postBody = new HttpPostBody(res);
 
-        ServiceToken.REQUEST_TOKEN = values[0];
-        ServiceToken.REQUEST_SECRET = values[1];
+        ServiceToken.REQUEST_TOKEN = postBody.getValue("oauth_token");
+        ServiceToken.REQUEST_SECRET = postBody.getValue("oauth_token_secret");
     }
 }
