@@ -29,6 +29,17 @@ public class PackageService {
         return null;
     }
 
+    public ServiceInfo[] getServiceInfoList(String packId, int page, int pageSize) {
+        String jString = packageApi.getServiceList(packId, pageSize, page);
+        try {
+            IndexJSONObject json = new IndexJSONObject(jString);
+            return json.getObjectArray(ServiceInfo.class);
+        } catch (Exception e) {
+            Logger.e(e);
+        }
+        return null;
+    }
+
     public ServiceInfo getServiceInfo(String serviceId) {
         String jString = packageApi.getService(serviceId);
         try {

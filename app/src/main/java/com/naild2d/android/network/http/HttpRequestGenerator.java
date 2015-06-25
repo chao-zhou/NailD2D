@@ -31,6 +31,10 @@ public abstract class HttpRequestGenerator {
         return null;
     }
 
+    public String getRelativeParamURI(ServiceRequest req) {
+        return req.getRelativeURI();
+    }
+
     public abstract HttpUriRequest getHttpRequest(ServiceRequest req);
     protected abstract boolean fit(ServiceRequest req);
 

@@ -1,5 +1,6 @@
 package com.naild2d.android.api;
 
+import com.naild2d.android.crypto.MD5Crpto;
 import com.naild2d.android.network.ServiceRequest;
 
 /**
@@ -29,11 +30,13 @@ public class AccountApi extends Api {
 
     //-3.5
     public String profile(String phone, String pwd){
+        String encrptedPwd = MD5Crpto.digestMD5String(pwd);
+
         ServiceRequest req = new ServiceRequest("/user");
         req.setMethod(ServiceRequest.METHOD_POST);
         req.setType(ServiceRequest.TYPE_REQUEST);
         addParams(req,"phone",phone);
-        addParams(req,"pw",pwd);
+        addParams(req, "pw", encrptedPwd);
         return getResponseString(req);
     }
 

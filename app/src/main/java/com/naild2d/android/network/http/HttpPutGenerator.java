@@ -21,6 +21,33 @@ import java.util.List;
  */
 public class HttpPutGenerator extends HttpRequestGenerator {
 
+    private static String getQueryURI(ServiceRequest req) {
+        Uri.Builder builder = Uri.parse(req.getFullURI()).buildUpon();
+
+        for (NameValuePair pair : req.getParams()) {
+            builder.appendQueryParameter(pair.getName(), pair.getValue());
+        }
+
+        for (NameValuePair pair : req.getOAuthValues()) {
+            builder.appendQueryParameter(pair.getName(), pair.getValue());
+        }
+        return builder.build().toString();
+    }
+
+    private static String getIndexActionURI(String uri, List<NameValuePair> params) {
+        String indexActionURI = uri;
+        for (NameValuePair pair : params) {
+            indexActionURI += "/" + pair.getName() + "/" + pair.getValue();
+        }
+
+        return indexActionURI;
+    }
+
+    @Override
+    public String getRelativeParamURI(ServiceRequest req) {
+        return getIndexActionURI(req.getRelativeURI(), req.getParams());
+    }
+
     @Override
     public HttpUriRequest getHttpRequest(ServiceRequest req) {
         String queryURI = getQueryURI(req);
@@ -28,7 +55,7 @@ public class HttpPutGenerator extends HttpRequestGenerator {
 
         List<NameValuePair> params = new ArrayList<>();
         for(NameValuePair pair : req.getParams()){
-            params.add(new BasicNameValuePair(pair.getName(),pair.getValue()));
+            params.add(new BasicNameValuePair(pair.getName(), pair.getValue()));
         }
 
         try {
@@ -43,18 +70,5 @@ public class HttpPutGenerator extends HttpRequestGenerator {
     @Override
     protected boolean fit(ServiceRequest req) {
         return req.getMethod().equals(ServiceRequest.METHOD_PUT);
-    }
-
-    private static String getQueryURI(ServiceRequest req){
-        Uri.Builder builder = Uri.parse(req.getFullURI()).buildUpon();
-
-        for(NameValuePair pair : req.getParams()){
-            builder.appendQueryParameter(pair.getName(),pair.getValue());
-        }
-
-        for (NameValuePair pair : req.getOAuthValues() ){
-            builder.appendQueryParameter(pair.getName(), pair.getValue());
-        }
-        return builder.build().toString();
     }
 }

@@ -13,6 +13,8 @@ import com.naild2d.android.network.http.HttpPostBody;
  */
 public class AccountService {
 
+    private static UserProfile UserProfile = null;
+
     private TokenApi tokenApi = null;
     private AccountApi accountApi = null;
 
@@ -42,11 +44,15 @@ public class AccountService {
     }
 
     public UserProfile getProfile(String phone, String pwd) {
+        if (UserProfile != null) {
+            return UserProfile;
+        }
 
         String jString = accountApi.profile(phone, pwd);
         try {
             IndexJSONObject json = new IndexJSONObject(jString);
-            return json.getObject(UserProfile.class);
+            UserProfile = json.getObject(UserProfile.class);
+            return UserProfile;
         } catch (Exception e) {
             Logger.e(e);
         }

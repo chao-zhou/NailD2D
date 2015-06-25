@@ -42,6 +42,19 @@ public class ServiceRequest {
         params = new ArrayList<>();
     }
 
+    public void caculateRelativeURI() {
+        HttpRequestGenerator generator = HttpRequestGenerator.getInstance(this);
+        if (generator == null)
+            return;
+
+        String newRelativeURI = generator.getRelativeParamURI(this);
+        if (relativeURI == newRelativeURI)
+            return;
+
+        relativeURI = newRelativeURI;
+        params.clear();
+    }
+
     public HttpUriRequest getHttpRequest() {
 
         HttpRequestGenerator generator = HttpRequestGenerator.getInstance(this);

@@ -1,7 +1,5 @@
 package com.naild2d.android.service_test;
 
-import android.util.Log;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,6 +13,7 @@ public class ServiceTest {
     static {
         testRunnerList = new ArrayList<>();
         testRunnerList.add(new AccountServiceTestRunner());
+        testRunnerList.add(new PackageServiceTestRunner());
     }
 
     public static void RunTest(ServiceTestContext context) {
@@ -22,7 +21,7 @@ public class ServiceTest {
             try {
                 runner.RunTest(context);
             } catch (Exception e) {
-                Log.e("naild2d", e.getMessage());
+                e.printStackTrace();
             }
         }
     }

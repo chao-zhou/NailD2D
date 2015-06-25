@@ -11,17 +11,19 @@ import org.apache.http.impl.client.DefaultHttpClient;
  */
 public class ServiceClient {
 
-    public static ServiceClient getClient(){
-        return new ServiceClient();
-    }
-
     private HttpClient client = null;
 
     private ServiceClient(){
         client = new DefaultHttpClient();
     }
 
+    public static ServiceClient getClient() {
+        return new ServiceClient();
+    }
+
     public HttpResponse execute(ServiceRequest request) {
+
+        request.caculateRelativeURI();
         appendOAuthParams(request);
         return getHttpResponse(request);
     }
