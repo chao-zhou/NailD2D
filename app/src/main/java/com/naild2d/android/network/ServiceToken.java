@@ -1,5 +1,9 @@
 package com.naild2d.android.network;
 
+import android.content.Context;
+
+import com.naild2d.android.storage.SettingsStorageHelper;
+
 /**
  * Created by ebread on 2015/3/8.
  */
@@ -14,13 +18,21 @@ public class ServiceToken {
     public static final String CUSTOMER_ID = "67d5832a74e8540f70b1afc9052a9d48054f191a6";
     public static String CUSTOMER_SECRET = "99c6af7336eedc11d322364f2b159d56";
 
-    public static String REQUEST_TOKEN;
-    public static String REQUEST_SECRET;
+    public static String REQUEST_TOKEN = null;
+    public static String REQUEST_SECRET = null;
 
-    public static String ACCESS_TOKEN;
-    public static String ACCESS_SECRET;
+    public static String ACCESS_TOKEN = null;
+    public static String ACCESS_SECRET = null;
 
-    public static void save() {
+    public static void save(Context context) {
+        SettingsStorageHelper helper = SettingsStorageHelper.getInstance(context);
+        helper.save("ACCESS_TOKEN", ACCESS_TOKEN);
+        helper.save("ACCESS_SECRET", ACCESS_SECRET);
+    }
 
+    public static void load(Context context) {
+        SettingsStorageHelper helper = SettingsStorageHelper.getInstance(context);
+        ACCESS_TOKEN = helper.load("ACCESS_TOKEN");
+        ACCESS_SECRET = helper.load("ACCESS_SECRET");
     }
 }

@@ -1,5 +1,7 @@
 package com.naild2d.android.service;
 
+import android.content.Context;
+
 import com.naild2d.android.api.AccountApi;
 import com.naild2d.android.api.TokenApi;
 import com.naild2d.android.json.IndexJSONObject;
@@ -11,14 +13,16 @@ import com.naild2d.android.network.http.HttpPostBody;
 /**
  * Created by chaozhou on 3/17/2015.
  */
-public class AccountService {
+public class AccountService extends BaseService {
 
     private static UserProfile UserProfile = null;
 
     private TokenApi tokenApi = null;
     private AccountApi accountApi = null;
 
-    public AccountService() {
+    public AccountService(Context context) {
+        super(context);
+
         tokenApi = new TokenApi();
         accountApi = new AccountApi();
     }
@@ -33,10 +37,11 @@ public class AccountService {
     }
 
     public boolean login(String phone, String pwd) {
-
+        ServiceToken.load(context);
         if (ServiceToken.ACCESS_TOKEN != null) {
             return true;
         }
+
         tryGetRequestToken();
         getAccessToken(phone, pwd);
 
@@ -69,7 +74,7 @@ public class AccountService {
         ServiceToken.ACCESS_TOKEN = postBody.getValue("oauth_token");
         ServiceToken.ACCESS_SECRET = postBody.getValue("oauth_token_secret");
 
-        ServiceToken.save();
+        ServiceToken.save(context);
     }
 
     private void tryGetRequestToken() {

@@ -6,23 +6,31 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
-import com.naild2d.android.network.ServiceToken;
+import com.naild2d.android.service.AccountService;
 
-
-public class HomeActivity extends Activity {
+public class LoginActivity extends Activity {
+    TextView txtName = null;
+    TextView txtPassword = null;
+    AccountService accountService = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
-    }
+        setContentView(R.layout.activity_login);
 
+        accountService = new AccountService(this);
+
+        txtName = (TextView) findViewById(R.id.txtName);
+        txtPassword = (TextView) findViewById(R.id.txtPassword);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        //getMenuInflater().inflate(R.menu.menu_home, menu);
+        getMenuInflater().inflate(R.menu.menu_login, menu);
         return true;
     }
 
@@ -41,13 +49,16 @@ public class HomeActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void switchToUserProfile(View view) {
-        Intent intent;
-        if (ServiceToken.ACCESS_TOKEN == null) {
-            intent = new Intent(this, LoginActivity.class);
-        } else {
-            intent = new Intent(this, UserProfileActivity.class);
+    public void login(View view) {
+        String user = txtName.getText().toString();
+        String pwd = txtPassword.getText().toString();
+
+        if (accountService.login(user, pwd)) {
+            Intent intent = new Intent(this, UserProfileActivity.class);
+            startActivity(intent);
+            return;
         }
-        startActivity(intent);
+
+        Toast.makeText(this, "Login Failed", Toast.LENGTH_SHORT);
     }
 }

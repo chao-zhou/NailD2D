@@ -2,52 +2,53 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.naild2d.android.HomeActivity"
     android:background="#ffffffff"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.naild2d.android.HomeActivity">
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:orientation="vertical"
         android:layout_weight="1"
+        android:orientation="vertical"
         android:paddingBottom="10dp">
 
         <RelativeLayout
             android:id="@+id/home_head_bar"
             android:layout_width="fill_parent"
             android:layout_height="45dp"
-            android:orientation="horizontal"
             android:layout_marginBottom="10dp"
-            android:background="@android:color/transparent">
+            android:background="@android:color/transparent"
+            android:orientation="horizontal">
 
             <ImageButton
                 android:layout_width="30dp"
                 android:layout_height="30dp"
+                android:layout_alignParentLeft="true"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="5dp"
-                android:layout_alignParentLeft="true"
-                android:src="@drawable/home_btn_menu"
+                android:background="@android:color/transparent"
                 android:scaleType="centerInside"
-                android:background="@android:color/transparent" />
+                android:src="@drawable/home_btn_menu" />
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
                 android:layout_centerHorizontal="true"
-                android:src="@drawable/home_logo"
+                android:background="@android:color/transparent"
                 android:scaleType="centerInside"
-                android:background="@android:color/transparent" />
+                android:src="@drawable/home_logo" />
 
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
                 android:layout_alignParentRight="true"
-                android:src="@drawable/home_btn_profile"
+                android:background="@android:color/transparent"
+                android:onClick="switchToUserProfile"
                 android:scaleType="centerInside"
-                android:background="@android:color/transparent" />
+                android:src="@drawable/home_btn_profile" />
 
         </RelativeLayout>
 
@@ -55,75 +56,75 @@
             android:id="@+id/home_adv"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:src="@drawable/home_adv_default"
+            android:background="@android:color/transparent"
             android:scaleType="fitXY"
-            android:background="@android:color/transparent" />
+            android:src="@drawable/home_adv_default" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:orientation="vertical"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:orientation="vertical">
 
         <ImageView
             android:layout_width="fill_parent"
             android:layout_height="20dp"
-            android:src="@drawable/home_spliter"
+            android:layout_marginBottom="10dp"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
-            android:layout_marginBottom="10dp"
-            android:scaleType="fitXY" />
+            android:scaleType="fitXY"
+            android:src="@drawable/home_spliter" />
 
         <TableLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:gravity="center"
+            android:layout_weight="1"
             android:background="@android:color/transparent"
-            android:layout_weight="1">
+            android:gravity="center">
 
             <TableRow
-                android:gravity="center"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:gravity="center">
 
                 <ImageButton
-                    android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
-                    android:src="@drawable/home_btn_1"
-                    android:background="@android:color/transparent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
                     android:layout_marginRight="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:scaleType="fitEnd" />
+                    android:background="@android:color/transparent"
+                    android:scaleType="fitEnd"
+                    android:src="@drawable/home_btn_1" />
 
                 <ImageButton
-                    android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
-                    android:src="@drawable/home_btn_2"
-                    android:background="@android:color/transparent"
-                    android:layout_marginLeft="10dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
-                    android:scaleType="fitStart" />
+                    android:layout_marginLeft="10dp"
+                    android:background="@android:color/transparent"
+                    android:scaleType="fitStart"
+                    android:src="@drawable/home_btn_2" />
             </TableRow>
 
             <TableRow
-                android:gravity="center"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:gravity="center">
 
                 <ImageButton
-                    android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
-                    android:src="@drawable/home_btn_3"
-                    android:background="@android:color/transparent"
+                    android:layout_height="wrap_content"
                     android:layout_marginRight="10dp"
-                    android:scaleType="fitEnd" />
+                    android:background="@android:color/transparent"
+                    android:scaleType="fitEnd"
+                    android:src="@drawable/home_btn_3" />
 
                 <ImageButton
-                    android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
-                    android:src="@drawable/home_btn_4"
-                    android:background="@android:color/transparent"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:scaleType="fitStart" />
+                    android:background="@android:color/transparent"
+                    android:scaleType="fitStart"
+                    android:src="@drawable/home_btn_4" />
             </TableRow>
         </TableLayout>
     </LinearLayout>
