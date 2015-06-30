@@ -15,8 +15,6 @@ import com.naild2d.android.network.http.HttpPostBody;
  */
 public class AccountService extends BaseService {
 
-    private static UserProfile UserProfile = null;
-
     private TokenApi tokenApi = null;
     private AccountApi accountApi = null;
 
@@ -49,15 +47,15 @@ public class AccountService extends BaseService {
     }
 
     public UserProfile getProfile(String phone, String pwd) {
-        if (UserProfile != null) {
-            return UserProfile;
+        if (UserProfile.getUserProfile() != null) {
+            return UserProfile.getUserProfile();
         }
 
         String jString = accountApi.profile(phone, pwd);
         try {
             IndexJSONObject json = new IndexJSONObject(jString);
-            UserProfile = json.getObject(UserProfile.class);
-            return UserProfile;
+            UserProfile.setUserProfile(json.getObject(UserProfile.class));
+            return UserProfile.getUserProfile();
         } catch (Exception e) {
             Logger.e(e);
         }

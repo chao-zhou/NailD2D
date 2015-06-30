@@ -7,6 +7,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.StrictMode;
 
+import com.naild2d.android.model.UserProfile;
 import com.naild2d.android.network.ServiceToken;
 
 public class MainActivity extends Activity {
@@ -24,10 +25,12 @@ public class MainActivity extends Activity {
 
         Intent intent = new Intent(this, HomeActivity.class);
         startActivity(intent);
+        finish();
     }
 
     private void LoadSettings() {
         ServiceToken.load(this);
+        UserProfile.load(this);
     }
 
 

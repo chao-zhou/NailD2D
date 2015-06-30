@@ -13,5 +13,7 @@
     <string name="title_activity_order_comment">OrderCommentActivity</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="title_activity_user_profile">UserProfileActivity</string>
+    <string name="title_activity_forget_password">ForgetPassword</string>
+    <string name="title_activity_register_user">RegisterUserActivity</string>
 
 </resources>
