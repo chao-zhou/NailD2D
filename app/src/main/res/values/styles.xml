@@ -5,4 +5,27 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="NailD2D_TopBarLayout">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+    </style>
+
+    <style name="NailD2D_TopBarBackButton">
+        <item name="android:layout_width">25dp</item>
+        <item name="android:layout_height">25dp</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginTop">27dp</item>
+        <item name="android:scaleType">centerInside</item>
+    </style>
+
+    <style name="NailD2D_TopBarCenterText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_marginTop">23dp</item>
+        <item name="android:scaleType">centerInside</item>
+        <item name="android:textSize">25sp</item>
+    </style>
 </resources>
