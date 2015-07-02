@@ -36,14 +36,24 @@ public class AccountService extends BaseService {
 
     public boolean login(String phone, String pwd) {
         ServiceToken.load(context);
-        if (ServiceToken.ACCESS_TOKEN != null) {
+        if (UserProfile.getUserProfile() != null) {
             return true;
         }
 
         tryGetRequestToken();
         getAccessToken(phone, pwd);
 
-        return ServiceToken.ACCESS_TOKEN != null;
+        return UserProfile.getUserProfile() != null;
+    }
+
+    public boolean logout() {
+        try {
+            UserProfile.setUserProfile(null);
+            UserProfile.save(context);
+        } catch (Exception ex) {
+            return false;
+        }
+        return true;
     }
 
     public UserProfile getProfile(String phone, String pwd) {
@@ -55,6 +65,7 @@ public class AccountService extends BaseService {
         try {
             IndexJSONObject json = new IndexJSONObject(jString);
             UserProfile.setUserProfile(json.getObject(UserProfile.class));
+            UserProfile.save(context);
             return UserProfile.getUserProfile();
         } catch (Exception e) {
             Logger.e(e);
@@ -76,8 +87,6 @@ public class AccountService extends BaseService {
     }
 
     private void tryGetRequestToken() {
-        if (ServiceToken.REQUEST_TOKEN != null)
-            return;
 
         String res = tokenApi.getRequestToken();
         HttpPostBody postBody = new HttpPostBody(res);

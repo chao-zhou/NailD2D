@@ -38,10 +38,11 @@ public class UserProfile extends JsonWrapper {
     }
 
     public static void save(Context context) {
-        if (userProfile == null)
-            return;
-
         SettingsStorageHelper helper = SettingsStorageHelper.getInstance(context);
+        if (userProfile == null) {
+            helper.save(SettingKey, null);
+            return;
+        }
         helper.save(SettingKey, userProfile.toString());
     }
 

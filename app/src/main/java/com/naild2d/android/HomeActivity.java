@@ -7,7 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.naild2d.android.network.ServiceToken;
+import com.naild2d.android.model.UserProfile;
 
 
 public class HomeActivity extends Activity {
@@ -43,7 +43,7 @@ public class HomeActivity extends Activity {
 
     public void switchToUserProfile(View view) {
         Intent intent;
-        if (ServiceToken.ACCESS_TOKEN == null) {
+        if (UserProfile.getUserProfile() == null) {
             intent = new Intent(this, LoginActivity.class);
         } else {
             intent = new Intent(this, UserProfileActivity.class);
