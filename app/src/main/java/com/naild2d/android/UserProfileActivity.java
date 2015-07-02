@@ -1,17 +1,36 @@
 package com.naild2d.android;
 
-import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.naild2d.android.model.UserProfile;
+import com.naild2d.android.service.AccountService;
 
 
-public class UserProfileActivity extends Activity {
+public class UserProfileActivity extends NailD2DActivity {
+    UserProfile profile;
+    ImageView profileImageView;
+    TextView txtNumber;
+    AccountService accountService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
+
+        accountService = new AccountService(this);
+        profile = UserProfile.getUserProfile();
+
+        profileImageView = (ImageView) findViewById(R.id.user_profile_pic);
+        txtNumber = (TextView) findViewById(R.id.user_profile_number);
+
+        txtNumber.setText(profile.getPhone());
     }
 
     @Override
@@ -34,5 +53,17 @@ public class UserProfileActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void logout(View view) {
+        if (accountService.logout()) {
+            Intent i = new Intent(this, LoginActivity.class);
+            startActivity(i);
+            finish();
+        }
+    }
+
+    public void switchActivity(View view) {
+        Toast.makeText(this, view.getTag().toString(), Toast.LENGTH_SHORT).show();
     }
 }
