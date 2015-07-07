@@ -53,7 +53,6 @@ public class LoginActivity extends NailD2DActivity {
 
         if (intent != null) {
             startActivity(intent);
-            finish();
         }
     }
 }

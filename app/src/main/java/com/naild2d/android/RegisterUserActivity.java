@@ -1,37 +1,49 @@
 package com.naild2d.android;
 
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
+
+import com.naild2d.android.service.AccountService;
 
 
 public class RegisterUserActivity extends NailD2DActivity {
+
+    private AccountService accountService = null;
+    private EditText txtNumber = null;
+    private EditText txtCertCode = null;
+    private EditText txtPassword = null;
+    private EditText txtRefUser = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_user);
+
+        txtNumber = (EditText) findViewById(R.id.txtNumber);
+        txtCertCode = (EditText) findViewById(R.id.txtCertCode);
+        txtPassword = (EditText) findViewById(R.id.txtPassword);
+        txtRefUser = (EditText) findViewById(R.id.txtRefUser);
+
+        accountService = new AccountService(this);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_register_user, menu);
-        return true;
-    }
+    public void submit(View view) {
+        try {
+            String phone = txtNumber.getText().toString();
+            String code = txtCertCode.getText().toString();
+            String pwd = txtPassword.getText().toString();
+            String ref = txtRefUser.getText().toString();
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+            if (accountService.register(phone, pwd, code, ref)) {
+                return;
+            }
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        } catch (Exception ex) {
+            ex.printStackTrace();
         }
 
-        return super.onOptionsItemSelected(item);
+        showMessage("Register failed.");
     }
+
 }

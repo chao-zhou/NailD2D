@@ -1,37 +1,30 @@
 package com.naild2d.android;
 
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
+
+import com.naild2d.android.service.AccountService;
 
 
 public class ForgetPasswordActivity extends NailD2DActivity {
+    private AccountService accountService = null;
+    private EditText txtNumber = null;
+    private EditText txtPassword = null;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forget_password);
+
+        txtNumber = (EditText) findViewById(R.id.txtNumber);
+        txtPassword = (EditText) findViewById(R.id.txtPassword);
+
+        accountService = new AccountService(this);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_forget_password, menu);
-        return true;
-    }
+    public void next(View view) {
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 }

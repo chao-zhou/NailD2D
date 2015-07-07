@@ -15,5 +15,6 @@
     <string name="title_activity_user_profile">UserProfileActivity</string>
     <string name="title_activity_forget_password">ForgetPassword</string>
     <string name="title_activity_register_user">RegisterUserActivity</string>
+    <string name="cert_code_button_text">获取密码</string>
 
 </resources>
