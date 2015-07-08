@@ -16,5 +16,10 @@
     <string name="title_activity_forget_password">ForgetPassword</string>
     <string name="title_activity_register_user">RegisterUserActivity</string>
     <string name="cert_code_button_text">获取密码</string>
-
+    <string name="title_activity_location_activty">LocationActivty</string>
+    <string name="city_selection_title">请选择城市</string>
+    <string-array name="city_array">
+        <item>北京</item>
+        <item>上海</item>
+    </string-array>
 </resources>

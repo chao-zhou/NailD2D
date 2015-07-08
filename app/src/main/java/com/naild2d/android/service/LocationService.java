@@ -1,5 +1,7 @@
 package com.naild2d.android.service;
 
+import android.content.Context;
+
 import com.naild2d.android.api.LocationApi;
 import com.naild2d.android.json.IndexJSONObject;
 import com.naild2d.android.log.Logger;
@@ -10,11 +12,14 @@ import org.json.JSONObject;
 /**
  * Created by ebread on 2015/6/16.
  */
-public class LocationService {
+public class LocationService extends BaseService {
     private LocationApi locationApi = null;
 
-    public LocationService() {
+    public LocationService(Context context) {
+        super(context);
+
         locationApi = new LocationApi();
+
     }
 
     public String getAddress(double lat, double lon) {
