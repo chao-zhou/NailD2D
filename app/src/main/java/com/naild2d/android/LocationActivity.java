@@ -15,7 +15,7 @@ import com.naild2d.android.service.LocationService;
 
 public class LocationActivity extends NailD2DActivity {
 
-    private String selectedCity = "±±¾©";
+    private String selectedCity = null;
     private String[] cityArray = null;
     private Spinner spinnerCity = null;
     private AutoCompleteTextView txtAddress = null;
@@ -41,6 +41,7 @@ public class LocationActivity extends NailD2DActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerCity.setAdapter(adapter);
         spinnerCity.setSelection(0);
+        selectedCity = cityArray[0];
 
 
         spinnerCity.setOnItemSelectedListener(new Spinner.OnItemSelectedListener() {
