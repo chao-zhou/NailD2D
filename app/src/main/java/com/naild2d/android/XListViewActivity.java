@@ -1,6 +1,5 @@
 package com.naild2d.android;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.widget.ArrayAdapter;
@@ -9,7 +8,7 @@ import com.naild2d.android.component.xlistview.XListView;
 
 import java.util.ArrayList;
 
-public class XListViewActivity extends Activity implements XListView.IXListViewListener {
+public class XListViewActivity extends NailD2DActivity implements XListView.IXListViewListener {
     private static int refreshCnt = 0;
     private XListView mListView;
     private ArrayAdapter<String> mAdapter;

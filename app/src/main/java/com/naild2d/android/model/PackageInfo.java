@@ -24,6 +24,9 @@ public class PackageInfo extends JsonWrapper {
     private double ecount;
     private int served;
 
+    public PackageInfo() {
+    }
+
     public PackageInfo(JSONObject json) throws JSONException {
         super(json);
     }

@@ -8,6 +8,13 @@ import org.json.JSONObject;
  */
 public abstract class JsonWrapper {
 
+    public JsonWrapper() {
+    }
+
+    public JsonWrapper(String s) throws JSONException {
+        wrap(new JSONObject(s));
+    }
+
     public JsonWrapper(JSONObject json) throws JSONException {
         wrap(json);
     }

@@ -19,11 +19,14 @@
             android:label="@string/app_name" >
         </activity>
         <activity
+            android:name=".PackageListActivity"
+            android:label="@string/title_activity_package_list"></activity>
+        <activity
             android:name=".PackageDetailActivity"
             android:label="@string/title_activity_package_detail" >
         </activity>
         <activity
-            android:name=".PendingOrderList"
+            android:name=".PendingOrderListActivity"
             android:label="@string/title_activity_pending_order_list" >
         </activity>
         <activity
