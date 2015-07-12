@@ -13,6 +13,9 @@ public class OrderItem extends JsonWrapper {
     private OrderServiceInfo service;
     private double price;
 
+    public OrderItem() {
+    }
+
     public OrderItem(JSONObject json) throws JSONException {
         super(json);
     }

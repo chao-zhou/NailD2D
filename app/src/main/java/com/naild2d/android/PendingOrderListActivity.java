@@ -66,7 +66,7 @@ public class PendingOrderListActivity extends NailD2DListActivity<ServiceInfo> {
 
         ImageView thumbNail = (ImageView) convertView.findViewById(R.id.item_thumbnail);
         TextView nameView = (TextView) convertView.findViewById(R.id.item_name);
-        PriceTextView priceView = (PriceTextView) convertView.findViewById(R.id.item_price);
+        PriceTextView priceView = (PriceTextView) convertView.findViewById(R.id.item_price_layout);
 
         nameView.setText(data.getName());
         priceView.setPrice(String.valueOf(data.getPrice()));
