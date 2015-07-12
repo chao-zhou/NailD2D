@@ -62,7 +62,10 @@
         </activity>
         <activity
             android:name=".OrderCouponActivity"
-            android:label="@string/title_activity_order_coupon">
+            android:label="@string/title_activity_order_coupon"></activity>
+        <activity
+            android:name=".MyCouponActivity"
+            android:label="@string/title_activity_my_coupon">
         </activity>
     </application>
 
