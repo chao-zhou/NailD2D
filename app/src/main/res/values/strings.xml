@@ -33,5 +33,6 @@
     <string name="title_activity_order_coupon">OrderCouponActivity</string>
     <string name="title_activity_my_coupon">MyCouponActivity</string>
     <string name="title_activity_message">MessageActivity</string>
+    <string name="title_activity_test">TestActivity</string>
 
 </resources>
