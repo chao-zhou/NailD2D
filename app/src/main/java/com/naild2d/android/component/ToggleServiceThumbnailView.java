@@ -7,15 +7,15 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 import com.naild2d.android.R;
 
 /**
  * Created by ebread on 2015/7/13.
  */
-public class ToggleServiceThumbnailView extends FrameLayout {
+public class ToggleServiceThumbnailView extends RelativeLayout {
 
     private ImageView imageThumbnail = null;
     private ImageView imageMask = null;
