@@ -26,7 +26,7 @@ public class MainActivity extends Activity {
 
         Intent intent = new Intent(this, HomeActivity.class);
         startActivity(intent);
-        finish();
+        //finish();
     }
 
     private void LoadSettings() {
