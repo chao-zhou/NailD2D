@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/pkgls_bg"
     android:orientation="vertical"
-    tools:context="com.naild2d.android.HomeActivity">
+    tools:context="com.naild2d.android.activity.HomeActivity">
 
     <RelativeLayout
         android:id="@+id/home_head_bar"

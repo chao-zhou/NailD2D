@@ -1,12 +1,12 @@
-package com.naild2d.android;
+package com.naild2d.android.activity;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.naild2d.android.R;
 import com.naild2d.android.model.PackageInfo;
 
 import java.util.ArrayList;
@@ -38,7 +38,7 @@ public class PackageListActivity extends NailD2DXListActivity<PackageInfo> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        LayoutInflater inflater = (LayoutInflater) this.getSystemService(LAYOUT_INFLATER_SERVICE);
         return inflater.inflate(R.layout.item_packge, null);
     }
 

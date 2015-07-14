@@ -1,9 +1,11 @@
-package com.naild2d.android;
+package com.naild2d.android.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.naild2d.android.R;
 
 
 public class OrderCommentActivity extends Activity {

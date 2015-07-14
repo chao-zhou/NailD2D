@@ -1,6 +1,5 @@
-package com.naild2d.android;
+package com.naild2d.android.activity;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.naild2d.android.R;
 import com.naild2d.android.component.PriceTextView;
 import com.naild2d.android.model.ServiceInfo;
 
@@ -57,7 +57,7 @@ public class PendingOrderListActivity extends NailD2DListActivity<ServiceInfo> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        LayoutInflater inflater = (LayoutInflater) this.getSystemService(LAYOUT_INFLATER_SERVICE);
         return inflater.inflate(R.layout.item_pending_order_list, null);
     }
 

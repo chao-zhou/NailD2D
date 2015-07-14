@@ -1,10 +1,11 @@
-package com.naild2d.android;
+package com.naild2d.android.activity;
 
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.naild2d.android.R;
 import com.naild2d.android.model.order.OrderItem;
 import com.naild2d.android.model.order.OrderServiceInfo;
 

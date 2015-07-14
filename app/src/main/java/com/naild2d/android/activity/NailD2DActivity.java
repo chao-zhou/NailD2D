@@ -1,4 +1,4 @@
-package com.naild2d.android;
+package com.naild2d.android.activity;
 
 import android.app.Activity;
 import android.content.Context;

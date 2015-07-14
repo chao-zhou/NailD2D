@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg_01"
     android:orientation="vertical"
-    tools:context="com.naild2d.android.OrderDetailsActivity"
+    tools:context="com.naild2d.android.activity.OrderDetailsActivity"
     >
 
     <RelativeLayout

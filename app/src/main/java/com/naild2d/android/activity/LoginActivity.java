@@ -1,4 +1,4 @@
-package com.naild2d.android;
+package com.naild2d.android.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.naild2d.android.R;
 import com.naild2d.android.service.AccountService;
 
 public class LoginActivity extends NailD2DActivity {

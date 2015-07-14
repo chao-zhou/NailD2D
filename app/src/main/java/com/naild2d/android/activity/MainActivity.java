@@ -1,4 +1,4 @@
-package com.naild2d.android;
+package com.naild2d.android.activity;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
@@ -7,6 +7,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.StrictMode;
 
+import com.naild2d.android.R;
 import com.naild2d.android.model.UserProfile;
 import com.naild2d.android.network.ServiceToken;
 

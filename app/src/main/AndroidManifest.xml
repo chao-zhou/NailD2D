@@ -10,49 +10,49 @@
         android:label="@string/app_name"
         android:theme="@android:style/Theme.NoTitleBar" >
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.MainActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name=".HomeActivity"
+            android:name=".activity.HomeActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name=".PackageListActivity"
+            android:name=".activity.PackageListActivity"
             android:label="@string/title_activity_package_list" />
         <activity
-            android:name=".PackageDetailActivity"
+            android:name=".activity.PackageDetailActivity"
             android:label="@string/title_activity_package_detail" >
         </activity>
         <activity
-            android:name=".PendingOrderListActivity"
+            android:name=".activity.PendingOrderListActivity"
             android:label="@string/title_activity_pending_order_list" >
         </activity>
         <activity
-            android:name=".OrderDetailsActivity"
+            android:name=".activity.OrderDetailsActivity"
             android:label="@string/title_activity_order_details" >
         </activity>
         <activity
-            android:name=".OrderAddressActivity"
+            android:name=".activity.OrderAddressActivity"
             android:label="@string/title_activity_order_address" >
         </activity>
         <activity
-            android:name=".OrderCommentActivity"
+            android:name=".activity.OrderCommentActivity"
             android:label="@string/title_activity_order_comment" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".activity.LoginActivity"
             android:label="@string/title_activity_login" />
         <activity
-            android:name=".UserProfileActivity"
+            android:name=".activity.UserProfileActivity"
             android:label="@string/title_activity_user_profile" />
         <activity
-            android:name=".ForgetPasswordActivity"
+            android:name=".activity.ForgetPasswordActivity"
             android:label="@string/title_activity_forget_password" />
         <activity
-            android:name=".RegisterUserActivity"
+            android:name=".activity.RegisterUserActivity"
             android:label="@string/title_activity_register_user" />
         <activity
-            android:name=".LocationActivity"
+            android:name=".activity.LocationActivity"
             android:label="@string/title_activity_location_activty">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -61,16 +61,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".OrderCouponActivity"
+            android:name=".activity.OrderCouponActivity"
             android:label="@string/title_activity_order_coupon" />
         <activity
-            android:name=".MyCouponActivity"
+            android:name=".activity.MyCouponActivity"
             android:label="@string/title_activity_my_coupon" />
         <activity
-            android:name=".NoticeActivity"
+            android:name=".activity.NoticeActivity"
             android:label="@string/title_activity_message"></activity>
         <activity
-            android:name=".TestActivity"
+            android:name=".activity.TestActivity"
             android:label="@string/title_activity_test">
         </activity>
     </application>
