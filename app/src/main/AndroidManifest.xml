@@ -68,10 +68,13 @@
             android:label="@string/title_activity_my_coupon" />
         <activity
             android:name=".activity.NoticeActivity"
-            android:label="@string/title_activity_message"></activity>
+            android:label="@string/title_activity_message" />
         <activity
             android:name=".activity.TestActivity"
-            android:label="@string/title_activity_test">
+            android:label="@string/title_activity_test"></activity>
+        <activity
+            android:name=".activity.MyOrderListActivity"
+            android:label="@string/title_activity_my_order_list_actity">
         </activity>
     </application>
 

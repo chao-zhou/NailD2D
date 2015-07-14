@@ -1,0 +1,138 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/pkgls_bg"
+    android:orientation="vertical"
+    tools:context="com.naild2d.android.activity.HomeActivity">
+
+    <RelativeLayout
+        android:id="@+id/home_head_bar"
+        style="@style/NailD2D_TopBarLayout"
+        android:background="@drawable/pkgls_top_bar">
+
+        <ImageButton
+            style="@style/NailD2D_TopBarBackButton"
+            android:background="@android:color/transparent"
+            android:onClick="back"
+            android:src="@drawable/pkgls_back" />
+
+        <TextView
+            style="@style/NailD2D_TopBarCenterText"
+            android:background="@android:color/transparent"
+            android:text="我的订单"
+            android:textColor="#FFFFFF" />
+
+        <ImageButton
+            style="@style/NailD2D_TopBarRightImageButton"
+            android:src="@drawable/pkgls_loc_normal" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:paddingLeft="2dp"
+        android:paddingRight="2dp">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:paddingBottom="5dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:text="全部"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="1dp"
+                android:layout_height="fill_parent"
+                android:layout_below="@+id/btnLogin"
+                android:background="@android:color/transparent"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp"
+                android:src="@drawable/bg_border_gray_half" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:paddingBottom="5dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:text="已确认"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="1dp"
+                android:layout_height="fill_parent"
+                android:layout_below="@+id/btnLogin"
+                android:background="@android:color/transparent"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp"
+                android:src="@drawable/bg_border_gray_half" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:paddingBottom="5dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:text="已付款"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="1dp"
+                android:layout_height="fill_parent"
+                android:layout_below="@+id/btnLogin"
+                android:background="@android:color/transparent"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp"
+                android:src="@drawable/bg_border_gray_half" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:paddingBottom="5dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:text="已完成"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/btnLogin"
+            android:background="@drawable/bg_border_gray_half"
+            android:src="@android:color/transparent" />
+    </LinearLayout>
+
+    <com.naild2d.android.component.xlistview.XListView
+        android:id="@+id/list"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:choiceMode="singleChoice"
+        android:clickable="true"
+        android:divider="@android:color/transparent" />
+</LinearLayout>
