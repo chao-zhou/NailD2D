@@ -71,10 +71,13 @@
             android:label="@string/title_activity_message" />
         <activity
             android:name=".activity.TestActivity"
-            android:label="@string/title_activity_test"></activity>
+            android:label="@string/title_activity_test" />
         <activity
             android:name=".activity.MyOrderListActivity"
-            android:label="@string/title_activity_my_order_list_actity">
+            android:label="@string/title_activity_my_order_list_actity"></activity>
+        <activity
+            android:name=".activity.EvaluationActivity"
+            android:label="@string/title_activity_evaluation">
         </activity>
     </application>
 

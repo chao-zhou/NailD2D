@@ -35,5 +35,6 @@
     <string name="title_activity_message">MessageActivity</string>
     <string name="title_activity_test">TestActivity</string>
     <string name="title_activity_my_order_list_actity">MyOrderListActity</string>
+    <string name="title_activity_evaluation">EvaluationActivity</string>
 
 </resources>
