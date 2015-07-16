@@ -60,7 +60,7 @@
             android:layout_below="@+id/btnLogin"
             android:layout_marginTop="30dp"
             android:background="@android:color/transparent"
-            android:src="@drawable/bg_border_gray_half" />
+            android:src="@drawable/bg_border_half_gray" />
 
         <RelativeLayout
             android:layout_width="fill_parent"
@@ -96,7 +96,7 @@
             android:layout_height="1dp"
             android:layout_below="@+id/btnLogin"
             android:background="@android:color/transparent"
-            android:src="@drawable/bg_border_gray_half" />
+            android:src="@drawable/bg_border_half_gray" />
 
         <RelativeLayout
             android:layout_width="fill_parent"
@@ -132,7 +132,7 @@
             android:layout_height="1dp"
             android:layout_below="@+id/btnLogin"
             android:background="@android:color/transparent"
-            android:src="@drawable/bg_border_gray_half" />
+            android:src="@drawable/bg_border_half_gray" />
 
         <RelativeLayout
             android:layout_width="fill_parent"
@@ -168,7 +168,7 @@
             android:layout_height="1dp"
             android:layout_below="@+id/btnLogin"
             android:background="@android:color/transparent"
-            android:src="@drawable/bg_border_gray_half" />
+            android:src="@drawable/bg_border_half_gray" />
 
         <RelativeLayout
             android:layout_width="fill_parent"
@@ -204,7 +204,7 @@
             android:layout_height="1dp"
             android:layout_below="@+id/btnLogin"
             android:background="@android:color/transparent"
-            android:src="@drawable/bg_border_gray_half" />
+            android:src="@drawable/bg_border_half_gray" />
     </LinearLayout>
 
     <Button
