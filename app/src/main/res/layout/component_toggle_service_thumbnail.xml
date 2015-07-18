@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merge xmlns:android="http://schemas.android.com/apk/res/android">
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
@@ -30,7 +31,39 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_weight="4"
-            android:background="#ff0000"></RelativeLayout>
+            android:background="#ffffff">
+
+            <ImageView
+                android:layout_width="5dp"
+                android:layout_height="10dp"
+                android:layout_alignTop="@+id/component_service_thumbnail_view_price"
+                android:layout_marginTop="4dp"
+                android:layout_toLeftOf="@+id/component_service_thumbnail_view_price"
+                android:layout_toStartOf="@+id/component_service_thumbnail_view_price"
+                android:src="@drawable/icon_yuan_black" />
+
+            <TextView
+                android:id="@+id/component_service_thumbnail_view_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:text="126"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <com.naild2d.android.component.ImageTextView
+                android:id="@+id/component_service_thumbnail_view_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                app:image="@drawable/pkgls_icon_name_pressed"
+                app:text="凉宫春日的消失"
+                app:textColor="#000000"
+                app:textSize="10" />
+        </RelativeLayout>
     </LinearLayout>
 
     <Button
