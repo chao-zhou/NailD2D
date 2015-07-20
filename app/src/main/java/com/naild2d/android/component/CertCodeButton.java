@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.naild2d.android.R;
+import com.naild2d.android.activity.extend.NailD2DAsyncHandler;
+import com.naild2d.android.activity.extend.NailD2DAsyncTask;
 import com.naild2d.android.service.AccountService;
 
 import java.util.Timer;
@@ -17,7 +19,7 @@ import java.util.TimerTask;
 /**
  * Created by ebread on 2015/7/7.
  */
-public class CertCodeButton extends Button {
+public class CertCodeButton extends Button implements View.OnClickListener {
 
     public final static int DEFAULT_SLEEP_SECONDS = 60;
 
@@ -38,6 +40,29 @@ public class CertCodeButton extends Button {
         init(context);
     }
 
+    @Override
+    public void onClick(View v) {
+        NailD2DAsyncTask.doInBackground(new NailD2DAsyncHandler() {
+            CertCodeButton button = CertCodeButton.this;
+
+            @Override
+            public Object doAsync(Object... params) {
+                return button.sendCertCodeRequest();
+            }
+
+            @Override
+            public void asyncSuccess(Object result) {
+                Boolean success = (Boolean) result;
+                if (success) {
+                    button.setText(String.valueOf(DEFAULT_SLEEP_SECONDS));
+                    button.sleep(DEFAULT_SLEEP_SECONDS);
+                    return;
+                }
+                Toast.makeText(button.getContext(), "Cannot get cert code.", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
     public String getPhoneNumber() {
         return phoneNumber;
     }
@@ -55,17 +80,7 @@ public class CertCodeButton extends Button {
         handler = new MyHandler();
 
         this.setText(text);
-        this.setOnClickListener(new MyClickListener());
-    }
-
-    private void Sleep(int seconds) {
-        if (seconds <= 0)
-            return;
-
-        this.seconds = seconds;
-        CertCodeButton.this.setEnabled(false);
-        startTimer();
-
+        this.setOnClickListener(this);
     }
 
     private boolean sendCertCodeRequest() {
@@ -78,6 +93,16 @@ public class CertCodeButton extends Button {
         return false;
     }
 
+    private void sleep(int seconds) {
+        if (seconds <= 0)
+            return;
+
+        this.seconds = seconds;
+        CertCodeButton.this.setEnabled(false);
+        startTimer();
+
+    }
+
     private void startTimer() {
         TimerTask timerTask = new MyTimerTask(handler);
         timer = new Timer(true);
@@ -88,15 +113,6 @@ public class CertCodeButton extends Button {
         timer.cancel();
     }
 
-
-    class MyClickListener implements OnClickListener {
-        @Override
-        public void onClick(View v) {
-            CertCodeButton button = CertCodeButton.this;
-            button.setText(String.valueOf(DEFAULT_SLEEP_SECONDS));
-            button.Sleep(DEFAULT_SLEEP_SECONDS);
-        }
-    }
 
     class MyHandler extends Handler {
 
@@ -124,14 +140,8 @@ public class CertCodeButton extends Button {
 
         @Override
         public void run() {
-            CertCodeButton button = CertCodeButton.this;
-            if (button.sendCertCodeRequest()) {
-                Message msg = new Message();
-                handler.sendMessage(msg);
-                return;
-            }
-
-            Toast.makeText(button.getContext(), "Cannot get cert code.", Toast.LENGTH_SHORT).show();
+            Message msg = new Message();
+            handler.sendMessage(msg);
         }
     }
 }

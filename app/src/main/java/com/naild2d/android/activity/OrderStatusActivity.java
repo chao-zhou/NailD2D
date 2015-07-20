@@ -6,7 +6,9 @@ import android.view.MenuItem;
 
 import com.naild2d.android.R;
 
+//Use orderStatus Model
 public class OrderStatusActivity extends NailD2DActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
