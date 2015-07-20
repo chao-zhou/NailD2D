@@ -8,6 +8,8 @@ import org.json.JSONObject;
 /**
  * Created by ebread on 2015/6/18.
  */
+
+//TODO:Update this model
 public class CustomerServiceInfo extends JsonWrapper {
     private int id;
     private String name;

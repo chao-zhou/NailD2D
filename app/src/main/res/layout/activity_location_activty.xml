@@ -1,0 +1,78 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_01"
+    tools:context="com.naild2d.android.activity.LocationActivity">
+
+    <RelativeLayout
+        android:id="@+id/home_head_bar"
+        style="@style/NailD2D_TopBarLayout"
+        android:background="@drawable/pkgls_top_bar">
+
+        <ImageButton
+            style="@style/NailD2D_TopBarBackButton"
+            android:background="@android:color/transparent"
+            android:onClick="back"
+            android:src="@drawable/pkgls_back" />
+
+        <TextView
+            android:id="@+id/textView3"
+            style="@style/NailD2D_TopBarCenterText"
+            android:background="@android:color/transparent"
+            android:text="地理定位"
+            android:textColor="#FFFFFF" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="8dp"
+                android:text="V"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp" />
+
+            <Spinner
+                android:id="@+id/spinnerCity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/spinner_background"
+                android:prompt="@string/city_selection_title" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <AutoCompleteTextView
+        android:id="@+id/txtAddress"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/home_head_bar"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:layout_marginTop="13dp"
+        android:background="@drawable/edittext_white_pink_round"
+        android:hint="请输入详细地址"
+        android:inputType="number"
+        android:textSize="11sp" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/txtAddress"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/btn_shuicai_pink"
+        android:onClick="save"
+        android:text="确定"
+        android:textSize="20sp" />
+</RelativeLayout>

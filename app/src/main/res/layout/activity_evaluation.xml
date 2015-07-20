@@ -1,0 +1,203 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_01"
+    android:orientation="vertical"
+    tools:context="com.naild2d.android.activity.OrderDetailsActivity">
+
+    <RelativeLayout
+        android:id="@+id/home_head_bar"
+        style="@style/NailD2D_TopBarLayout"
+        android:background="@drawable/banner_top_green">
+
+        <ImageButton
+            style="@style/NailD2D_TopBarBackButton"
+            android:background="@android:color/transparent"
+            android:onClick="back"
+            android:src="@drawable/pkgls_back" />
+
+        <TextView
+            style="@style/NailD2D_TopBarCenterText"
+            android:background="@android:color/transparent"
+            android:text="评价"
+            android:textColor="#FFFFFF" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_gray_stroke_gray_fill_round"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="服务态度"
+                android:textColor="#070707" />
+
+            <com.naild2d.android.component.EvaluationView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="守时"
+                android:textColor="#070707" />
+
+            <com.naild2d.android.component.EvaluationView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="造型质量"
+                android:textColor="#070707" />
+
+            <com.naild2d.android.component.EvaluationView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="售后服务"
+                android:textColor="#070707" />
+
+            <com.naild2d.android.component.EvaluationView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/catch_pic"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentRight="true"
+            android:layout_weight="4"
+            android:background="@drawable/bg_gray_stroke_gray_fill_round"
+            android:scaleType="centerInside"
+            android:src="@drawable/icon_clock_pink" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/catch_pic"
+            android:layout_toStartOf="@+id/catch_pic"
+            android:layout_weight="1"
+            android:background="@drawable/bg_gray_stroke_gray_fill_round"
+            android:ellipsize="end"
+            android:hint="亲，写点什么吧，您的意见对其他约绘小伙伴有很大帮助"
+            android:lines="2"
+            android:maxLines="3"
+            android:padding="10dp"
+            android:singleLine="false"
+            android:textColor="#070707" />
+
+
+    </RelativeLayout>
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="4"
+                android:background="@drawable/bg_gray_stroke_gray_fill_round"
+                android:scaleType="centerInside"
+                android:src="@drawable/icon_clock_pink" />
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="4"
+                android:background="@drawable/bg_gray_stroke_gray_fill_round"
+                android:scaleType="centerInside"
+                android:src="@drawable/icon_clock_pink" />
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="4"
+                android:background="@drawable/bg_gray_stroke_gray_fill_round"
+                android:scaleType="centerInside"
+                android:src="@drawable/icon_clock_pink" />
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="4"
+                android:background="@drawable/bg_gray_stroke_gray_fill_round"
+                android:scaleType="centerInside"
+                android:src="@drawable/icon_clock_pink" />
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+</LinearLayout>

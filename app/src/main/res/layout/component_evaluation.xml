@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    android:orientation="horizontal">
+
+    <com.naild2d.android.component.ToggleImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginRight="5dp"
+        android:tag="1"
+        app:offSrc="#00ff00"
+        app:onSrc="#ff0000" />
+
+    <com.naild2d.android.component.ToggleImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginRight="5dp"
+        android:tag="2"
+        app:offSrc="#00ff00"
+        app:onSrc="#ff0000" />
+
+    <com.naild2d.android.component.ToggleImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginRight="5dp"
+        android:tag="3"
+        app:offSrc="#00ff00"
+        app:onSrc="#ff0000" />
+
+    <com.naild2d.android.component.ToggleImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginRight="5dp"
+        android:tag="4"
+        app:offSrc="#00ff00"
+        app:onSrc="#ff0000" />
+
+    <com.naild2d.android.component.ToggleImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:tag="5"
+        app:offSrc="#00ff00"
+        app:onSrc="#ff0000" />
+</LinearLayout>

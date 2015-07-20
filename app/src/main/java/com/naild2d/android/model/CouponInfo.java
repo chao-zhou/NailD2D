@@ -15,6 +15,8 @@ public class CouponInfo extends JsonWrapper {
     private String expired;
     private boolean enable;
 
+    public CouponInfo() {
+    }
 
     public CouponInfo(JSONObject json) throws JSONException {
         super(json);

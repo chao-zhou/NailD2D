@@ -1,16 +1,221 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.naild2d.android.UserProfileActivity">
+    android:background="@drawable/bg_01"
+    tools:context="com.naild2d.android.activity.UserProfileActivity">
+
+    <RelativeLayout
+        android:id="@+id/home_head_bar"
+        style="@style/NailD2D_TopBarLayout"
+        android:background="@drawable/pkgls_top_bar">
+
+        <ImageButton
+            style="@style/NailD2D_TopBarBackButton"
+            android:background="@android:color/transparent"
+            android:onClick="back"
+            android:src="@drawable/pkgls_back" />
+
+        <TextView
+            style="@style/NailD2D_TopBarCenterText"
+            android:background="@android:color/transparent"
+            android:text="个人中心"
+            android:textColor="#FFFFFF" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/user_profile_pic"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_below="@+id/home_head_bar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/home_btn_profile" />
 
     <TextView
+        android:id="@+id/user_profile_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="User Profile" />
+        android:layout_below="@+id/user_profile_pic"
+        android:layout_centerHorizontal="true"
+        android:text="00000000000"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="#0d0d0d" />
 
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/user_profile_number"
+        android:orientation="vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/btnLogin"
+            android:layout_marginTop="30dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/bg_border_half_gray" />
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:focusable="true"
+            android:onClick="switchActivity"
+            android:tag="message">
+
+            <com.naild2d.android.component.ImageTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:focusable="false"
+                app:image="@drawable/icon_location_pink"
+                app:text="个人消息"
+                app:textColor="#F6947B"
+                app:textSize="14" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:focusable="false"
+                android:src="@drawable/right_arrow_pink" />
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/btnLogin"
+            android:background="@android:color/transparent"
+            android:src="@drawable/bg_border_half_gray" />
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:focusable="true"
+            android:onClick="switchActivity"
+            android:tag="help">
+
+            <com.naild2d.android.component.ImageTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:focusable="false"
+                app:image="@drawable/icon_location_pink"
+                app:text="使用说明"
+                app:textColor="#F6947B"
+                app:textSize="14" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:focusable="false"
+                android:src="@drawable/right_arrow_pink" />
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/btnLogin"
+            android:background="@android:color/transparent"
+            android:src="@drawable/bg_border_half_gray" />
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:focusable="true"
+            android:onClick="switchActivity"
+            android:tag="licence">
+
+            <com.naild2d.android.component.ImageTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:focusable="false"
+                app:image="@drawable/icon_location_pink"
+                app:text="相关条款"
+                app:textColor="#F6947B"
+                app:textSize="14" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:focusable="false"
+                android:src="@drawable/right_arrow_pink" />
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/btnLogin"
+            android:background="@android:color/transparent"
+            android:src="@drawable/bg_border_half_gray" />
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:focusable="true"
+            android:onClick="switchActivity"
+            android:tag="aboutUs">
+
+            <com.naild2d.android.component.ImageTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:focusable="false"
+                app:image="@drawable/icon_location_pink"
+                app:text="关于我们"
+                app:textColor="#F6947B"
+                app:textSize="14" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:focusable="false"
+                android:src="@drawable/right_arrow_pink" />
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/btnLogin"
+            android:background="@android:color/transparent"
+            android:src="@drawable/bg_border_half_gray" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/linearLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/btn_shuicai_pink"
+        android:onClick="logout"
+        android:text="退出"
+        android:textSize="20sp" />
 </RelativeLayout>

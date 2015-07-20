@@ -13,6 +13,9 @@ public class OrderServiceInfo extends JsonWrapper {
     private String name;
     private int thumbnail;
 
+    public OrderServiceInfo() {
+    }
+
     public OrderServiceInfo(JSONObject json) throws JSONException {
         super(json);
     }
@@ -30,5 +33,21 @@ public class OrderServiceInfo extends JsonWrapper {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getThumbnail() {
+        return thumbnail;
+    }
+
+    public void setThumbnail(int thumbnail) {
+        this.thumbnail = thumbnail;
     }
 }

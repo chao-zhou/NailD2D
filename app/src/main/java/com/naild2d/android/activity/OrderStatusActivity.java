@@ -1,23 +1,25 @@
-package com.naild2d.android;
+package com.naild2d.android.activity;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.naild2d.android.R;
 
-public class UserProfileActivity extends Activity {
+//Use orderStatus Model
+public class OrderStatusActivity extends NailD2DActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user_profile);
+        setContentView(R.layout.activity_order_status);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_user_profile, menu);
+        getMenuInflater().inflate(R.menu.menu_order_status, menu);
         return true;
     }
 

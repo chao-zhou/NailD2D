@@ -17,6 +17,9 @@ public class ServiceInfo extends JsonWrapper {
     private int wty;
     private int served;
 
+    public ServiceInfo() {
+    }
+
     public ServiceInfo(JSONObject json) throws JSONException {
         super(json);
     }

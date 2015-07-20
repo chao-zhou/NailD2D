@@ -1,5 +1,7 @@
 package com.naild2d.android.service;
 
+import android.content.Context;
+
 import com.naild2d.android.api.ImageApi;
 import com.naild2d.android.json.IndexJSONObject;
 import com.naild2d.android.log.Logger;
@@ -10,7 +12,7 @@ import org.json.JSONObject;
 /**
  * Created by chaozhou on 3/17/2015.
  */
-public class ImageService {
+public class ImageService extends BaseService {
 
     public static final String DEVICE_IPHONE_X2 = "ix2";
     public static final String DEVICE_IPHONE_X3 = "ix3";
@@ -19,7 +21,8 @@ public class ImageService {
 
     private ImageApi imageApi = null;
 
-    public ImageService() {
+    public ImageService(Context context) {
+        super(context);
         imageApi = new ImageApi();
     }
 

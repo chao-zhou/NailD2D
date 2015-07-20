@@ -17,6 +17,9 @@ public class Notice extends JsonWrapper {
     private String page;
     private int pid;
 
+    public Notice() {
+    }
+
     public Notice(JSONObject json) throws JSONException {
         super(json);
     }

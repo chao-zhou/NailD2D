@@ -1,41 +1,26 @@
-package com.naild2d.android;
+package com.naild2d.android.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.naild2d.android.R;
 
-public class PendingOrderList extends Activity {
+
+public class OrderAddressActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pending_order_list);
-
-        /*
-        ListView listView = (ListView)findViewById(R.id.pending_order_list_order);
-
-        List<Map<String,?>> data = new ArrayList<>();
-        Map<String,String> map = new HashMap<>();
-        map.put("price","200.00");
-        data.add(map);
-
-        SimpleAdapter adapter = new SimpleAdapter(
-                this,
-                data,
-                R.layout.item_pending_order_list,
-                new String[]{"price"},
-                new int[]{R.id.item_pending_order_list_price});
-        listView.setAdapter(adapter);
-*/
+        setContentView(R.layout.activity_order_address);
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_pending_order_list, menu);
+        getMenuInflater().inflate(R.menu.menu_order_address, menu);
         return true;
     }
 
