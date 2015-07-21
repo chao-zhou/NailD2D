@@ -24,8 +24,6 @@ public abstract class NailD2DXListActivity<T> extends NailD2DActivity
     protected MyAdapter<T> myAdapter = null;
     protected ArrayList<T> items = new ArrayList<>();
 
-    protected abstract int getLayoutId();
-
     protected abstract void fillItems(ArrayList<T> items, String action);
 
     protected int getListViewId() {
@@ -35,7 +33,11 @@ public abstract class NailD2DXListActivity<T> extends NailD2DActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(getLayoutId());
+    }
+
+    @Override
+    public void onContentChanged() {
+        super.onContentChanged();
 
         mListView = (XListView) findViewById(getListViewId());
         mListView.setPullLoadEnable(true);
@@ -45,7 +47,6 @@ public abstract class NailD2DXListActivity<T> extends NailD2DActivity
         mListView.setAdapter(myAdapter);
 
         fillItems(items, FILL_ITEMS_ACTION_CREATE);
-
     }
 
     @Override

@@ -1,5 +1,6 @@
 package com.naild2d.android.activity;
 
+import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -13,11 +14,6 @@ import java.util.ArrayList;
 
 
 public class OrderDetailsActivity extends NailD2DListActivity<OrderItem> {
-
-    @Override
-    protected int getLayoutId() {
-        return R.layout.activity_order_details;
-    }
 
     @Override
     protected void fillItems(ArrayList items) {
@@ -35,6 +31,12 @@ public class OrderDetailsActivity extends NailD2DListActivity<OrderItem> {
         }
     }
 
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_order_details);
+    }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {

@@ -12,10 +12,6 @@ import java.util.ArrayList;
 
 public class MyCouponActivity extends NailD2DListActivity<CouponInfo> {
 
-    @Override
-    protected int getLayoutId() {
-        return R.layout.activity_my_coupon;
-    }
 
     @Override
     protected void fillItems(ArrayList<CouponInfo> items) {
@@ -27,7 +23,7 @@ public class MyCouponActivity extends NailD2DListActivity<CouponInfo> {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        setContentView(R.layout.activity_my_coupon);
     }
 
 

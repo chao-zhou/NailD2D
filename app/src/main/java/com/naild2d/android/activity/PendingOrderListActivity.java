@@ -23,11 +23,6 @@ public class PendingOrderListActivity extends NailD2DListActivity<ServiceInfo> {
 
 
     @Override
-    protected int getLayoutId() {
-        return R.layout.activity_pending_order_list;
-    }
-
-    @Override
     protected boolean IsAutoAdjustListHeight() {
         return true;
     }
@@ -48,6 +43,7 @@ public class PendingOrderListActivity extends NailD2DListActivity<ServiceInfo> {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_pending_order_list);
 
         txtAddress = (TextView) findViewById(R.id.address);
         txtTime = (TextView) findViewById(R.id.time);

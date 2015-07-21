@@ -1,5 +1,6 @@
 package com.naild2d.android.activity;
 
+import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -12,17 +13,17 @@ import java.util.ArrayList;
 public class OrderCouponActivity extends NailD2DListActivity<CouponInfo> {
 
     @Override
-    protected int getLayoutId() {
-        return R.layout.activity_order_coupon;
-    }
-
-    @Override
     protected void fillItems(ArrayList<CouponInfo> items) {
         for (int i = 0; i < 10; i++) {
             items.add(new CouponInfo());
         }
     }
 
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_my_coupon);
+    }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {

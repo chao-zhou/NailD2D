@@ -17,11 +17,6 @@ public class PackageDetailActivity extends NailD2DListActivity<Integer> {
     }
 
     @Override
-    protected int getLayoutId() {
-        return R.layout.activity_package_detail;
-    }
-
-    @Override
     protected void fillItems(ArrayList items) {
         for (int i = 0; i < 3; i++) {
             items.add(i);
@@ -31,7 +26,7 @@ public class PackageDetailActivity extends NailD2DListActivity<Integer> {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_package_detail);
+        setContentView(R.layout.activity_package_detail);
     }
 
 

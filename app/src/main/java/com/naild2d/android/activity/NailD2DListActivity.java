@@ -40,11 +40,8 @@ public abstract class NailD2DListActivity<T> extends NailD2DActivity
         listView.setLayoutParams(params);
     }
 
-    protected abstract int getLayoutId();
 
     protected abstract void fillItems(ArrayList<T> items);
-
-    ;
 
     protected boolean IsAutoAdjustListHeight() {
         return false;
@@ -57,8 +54,11 @@ public abstract class NailD2DListActivity<T> extends NailD2DActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(getLayoutId());
+    }
 
+    @Override
+    public void onContentChanged() {
+        super.onContentChanged();
         mListView = (ListView) findViewById(getListViewId());
 
         myAdapter = new MyAdapter<>(items, this);
@@ -68,7 +68,5 @@ public abstract class NailD2DListActivity<T> extends NailD2DActivity
         if (IsAutoAdjustListHeight()) {
             setListViewHeightBasedOnChildren(mListView, 0);
         }
-
     }
-
 }

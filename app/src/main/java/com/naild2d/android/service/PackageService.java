@@ -1,5 +1,7 @@
 package com.naild2d.android.service;
 
+import android.content.Context;
+
 import com.naild2d.android.api.PackageApi;
 import com.naild2d.android.json.IndexJSONObject;
 import com.naild2d.android.log.Logger;
@@ -10,11 +12,12 @@ import com.naild2d.android.model.ServiceInfo;
 /**
  * Created by ebread on 2015/6/15.
  */
-public class PackageService {
+public class PackageService extends BaseService {
 
     private PackageApi packageApi = null;
 
-    public PackageService() {
+    public PackageService(Context context) {
+        super(context);
         packageApi = new PackageApi();
     }
 

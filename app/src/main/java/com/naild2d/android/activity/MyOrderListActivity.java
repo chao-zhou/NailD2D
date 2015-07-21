@@ -11,11 +11,6 @@ import java.util.ArrayList;
 public class MyOrderListActivity extends NailD2DXListActivity<Object> {
 
     @Override
-    protected int getLayoutId() {
-        return R.layout.activity_my_order_list_actity;
-    }
-
-    @Override
     protected void fillItems(ArrayList<Object> items, String action) {
         items.add(new Object());
         items.add(new Object());

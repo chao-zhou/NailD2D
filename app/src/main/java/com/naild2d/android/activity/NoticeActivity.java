@@ -13,11 +13,6 @@ import java.util.ArrayList;
 public class NoticeActivity extends NailD2DXListActivity<Notice> {
 
     @Override
-    protected int getLayoutId() {
-        return R.layout.activity_notice;
-    }
-
-    @Override
     protected void fillItems(ArrayList<Notice> items, String action) {
         for (int i = 0; i < 3; i++) {
             Notice notice = new Notice();
@@ -31,6 +26,7 @@ public class NoticeActivity extends NailD2DXListActivity<Notice> {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_notice);
     }
 
 
