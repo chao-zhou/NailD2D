@@ -45,6 +45,11 @@ public abstract class NailD2DXListActivity<T> extends NailD2DActivity
 
         myAdapter = new MyAdapter<>(items, this);
         mListView.setAdapter(myAdapter);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
 
         fillItems(items, FILL_ITEMS_ACTION_CREATE);
     }
