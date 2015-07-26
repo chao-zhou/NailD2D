@@ -6,6 +6,7 @@
     tools:context="com.naild2d.android.activity.PackageDetailActivity">
 
     <ScrollView
+        android:id="@+id/pkg_scroll"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/home_head_bar"
@@ -76,4 +77,11 @@
             style="@style/NailD2D_TopBarRightImageButton"
             android:src="@drawable/pkgls_loc_normal" />
     </RelativeLayout>
+
+    <com.naild2d.android.component.OrderDateTableView
+        android:id="@+id/pkg_schedule"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone" />
 </RelativeLayout>

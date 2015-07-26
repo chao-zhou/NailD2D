@@ -48,19 +48,22 @@ public class PackageListActivity extends NailD2DXListActivity<PackageInfo> {
 
         switch (action) {
             case FILL_ITEMS_ACTION_CREATE:
-                items.clear();
+                if (items.size() > 0) {
+                    break;
+                }
                 pageIndex = 0;
+                getPackageListInfo(items);
                 break;
             case FILL_ITEMS_ACTION_REFRESH:
                 items.clear();
                 pageIndex = 0;
+                getPackageListInfo(items);
                 break;
             case FILL_ITEMS_ACTION_MORE:
                 pageIndex += 1;
+                getPackageListInfo(items);
                 break;
         }
-
-        getPackageListInfo(items);
     }
 
     private void getPackageListInfo(final ArrayList<PackageInfo> items) {
@@ -119,7 +122,6 @@ public class PackageListActivity extends NailD2DXListActivity<PackageInfo> {
             }
         });
     }
-
 
     private void switchToDetail(int position) {
         setTempData(TEMP_KEY_PKG_DETAILS, items.get(position));

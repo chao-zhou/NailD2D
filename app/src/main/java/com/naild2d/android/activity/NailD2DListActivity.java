@@ -63,8 +63,20 @@ public abstract class NailD2DListActivity<T> extends NailD2DActivity
 
         myAdapter = new MyAdapter<>(items, this);
         mListView.setAdapter(myAdapter);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
 
         fillItems(items);
+        if (IsAutoAdjustListHeight()) {
+            setListViewHeightBasedOnChildren(mListView, 0);
+        }
+    }
+
+    protected void refreshListView() {
+        myAdapter.notifyDataSetChanged();
         if (IsAutoAdjustListHeight()) {
             setListViewHeightBasedOnChildren(mListView, 0);
         }

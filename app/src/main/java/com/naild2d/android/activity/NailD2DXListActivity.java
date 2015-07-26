@@ -50,7 +50,6 @@ public abstract class NailD2DXListActivity<T> extends NailD2DActivity
     @Override
     protected void onStart() {
         super.onStart();
-
         fillItems(items, FILL_ITEMS_ACTION_CREATE);
     }
 

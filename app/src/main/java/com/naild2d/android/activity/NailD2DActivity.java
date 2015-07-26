@@ -5,8 +5,10 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.naild2d.android.activity.extend.NailD2DAsyncHandler;
@@ -35,8 +37,8 @@ public abstract class NailD2DActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-//        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-//        StrictMode.setThreadPolicy(policy);
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
 
         layoutInflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
@@ -78,6 +80,11 @@ public abstract class NailD2DActivity extends Activity {
 
     public Object getTempData(String key) {
         return TempData.getData(key);
+    }
+
+    //View
+    protected View getRootView() {
+        return ((ViewGroup) findViewById(android.R.id.content)).getChildAt(0);
     }
 }
 
