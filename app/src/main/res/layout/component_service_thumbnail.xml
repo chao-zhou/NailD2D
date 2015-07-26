@@ -17,14 +17,14 @@
         <ImageView
             android:layout_width="10dp"
             android:layout_height="15dp"
-            android:layout_alignTop="@+id/component_service_thumbnail_view_price"
+            android:layout_alignTop="@+id/item_service_price"
             android:layout_marginTop="6dp"
-            android:layout_toLeftOf="@+id/component_service_thumbnail_view_price"
-            android:layout_toStartOf="@+id/component_service_thumbnail_view_price"
+            android:layout_toLeftOf="@+id/item_service_price"
+            android:layout_toStartOf="@+id/item_service_price"
             android:src="@drawable/icon_yuan_black" />
 
         <TextView
-            android:id="@+id/component_service_thumbnail_view_price"
+            android:id="@+id/item_service_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
@@ -36,7 +36,7 @@
             android:textStyle="bold" />
 
         <com.naild2d.android.component.ImageTextView
-            android:id="@+id/component_service_thumbnail_view_name"
+            android:id="@+id/item_service_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
@@ -47,7 +47,7 @@
     </RelativeLayout>
 
     <ImageView
-        android:id="@+id/component_service_thumbnail_view_thumbnail"
+        android:id="@+id/item_service_thumbnail"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/component_service_thumbnail_view_info_panel"
