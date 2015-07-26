@@ -6,6 +6,7 @@
     android:orientation="horizontal">
 
     <com.naild2d.android.component.ToggleServiceThumbnailView
+        android:id="@+id/item_service1"
         android:layout_width="fill_parent"
         android:layout_height="150dp"
         android:layout_margin="5dp"
@@ -15,6 +16,7 @@
         app:thumbnail="#dddddd" />
 
     <com.naild2d.android.component.ToggleServiceThumbnailView
+        android:id="@+id/item_service2"
         android:layout_width="fill_parent"
         android:layout_height="150dp"
         android:layout_margin="5dp"

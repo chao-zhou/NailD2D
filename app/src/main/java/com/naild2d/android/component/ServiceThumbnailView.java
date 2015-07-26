@@ -30,9 +30,9 @@ public class ServiceThumbnailView extends RelativeLayout {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflater.inflate(R.layout.component_service_thumbnail, this);
 
-        nameView = (ImageTextView) findViewById(R.id.component_service_thumbnail_view_name);
-        priceView = (TextView) findViewById(R.id.component_service_thumbnail_view_price);
-        thumbnailView = (ImageView) findViewById(R.id.component_service_thumbnail_view_thumbnail);
+        nameView = (ImageTextView) findViewById(R.id.item_service_name);
+        priceView = (TextView) findViewById(R.id.item_service_price);
+        thumbnailView = (ImageView) findViewById(R.id.item_service_thumbnail);
 
         TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.ServiceThumbnailView);
 

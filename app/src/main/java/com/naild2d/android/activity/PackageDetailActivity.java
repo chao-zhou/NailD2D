@@ -9,6 +9,7 @@ import com.naild2d.android.R;
 import com.naild2d.android.component.ImageTextView;
 import com.naild2d.android.component.MyImageView;
 import com.naild2d.android.component.PriceTextView;
+import com.naild2d.android.component.ToggleServiceThumbnailView;
 import com.naild2d.android.model.PackageInfo;
 
 import java.util.ArrayList;
@@ -88,7 +89,16 @@ public class PackageDetailActivity extends NailD2DListActivity<Integer> {
 
     @Override
     public void bindData(int position, View convertView, ViewGroup parent, Integer data) {
+        if (packageInfo == null) {
+            return;
+        }
 
+        ToggleServiceThumbnailView service1 = (ToggleServiceThumbnailView) convertView.findViewById(R.id.item_service1);
+        service1.setImageId(packageInfo.getThumbnail());
+        service1.setServiceName(String.valueOf(position));
+        service1.setServicePrice(position * 10);
+
+        ToggleServiceThumbnailView service2 = (ToggleServiceThumbnailView) convertView.findViewById(R.id.item_service2);
     }
 
 }
