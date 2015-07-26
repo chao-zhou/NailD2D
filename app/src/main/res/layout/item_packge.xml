@@ -11,6 +11,7 @@
         android:layout_height="60dp"
         android:layout_alignParentLeft="true"
         android:layout_margin="10dp"
+        android:scaleType="fitXY"
         android:src="#FF0000"/>
 
     <TableLayout
@@ -27,16 +28,18 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
                 <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:scaleType="centerInside"
+                    android:layout_width="18dp"
+                    android:layout_height="22dp"
+                    android:layout_marginRight="3dp"
+                    android:scaleType="fitCenter"
                     android:src="@drawable/pkgls_icon_name_normal"/>
                 <TextView
                     android:id="@+id/pkg_item_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="甜美日系新娘款"
-                    android:textSize="16sp" />
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
             </LinearLayout>
         </TableRow>
         <TableRow android:layout_weight="1" android:gravity="center_vertical">
@@ -45,10 +48,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
-                android:lines="3"
+                android:lines="2"
                 android:maxLines="3"
+                android:padding="1dp"
                 android:singleLine="false"
                 android:text="abcd abcd abcd abcd abcd abcd abcd abcd abcd  abcd abcd abcd"
+                android:textColor="#000000"
                 android:textSize="8sp" />
         </TableRow>
         <TableRow android:layout_weight="1" android:gravity="center_vertical">
@@ -57,15 +62,17 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
                 <ImageView
-                    android:layout_width="22dp"
-                    android:layout_height="22dp"
-                    android:scaleType="centerInside"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginRight="3dp"
+                    android:scaleType="fitXY"
                     android:src="@drawable/pkgls_icon_addr_normal"/>
                 <TextView
                     android:id="@+id/pkg_item_shop"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="甜美日系新娘款"
+                    android:textColor="#000000"
                     android:textSize="14sp" />
             </LinearLayout>
         </TableRow>
@@ -82,7 +89,7 @@
             android:layout_width="9dp"
             android:layout_height="20dp"
             android:layout_alignParentBottom="true"
-            android:paddingBottom="5dp"
+            android:paddingBottom="6dp"
             android:scaleType="fitCenter"
             android:src="@drawable/pkgls_icon_yuan_normal"
             />
@@ -94,6 +101,7 @@
             android:layout_toEndOf="@+id/pkg_item_yuan_icon"
             android:layout_toRightOf="@+id/pkg_item_yuan_icon"
             android:text="123"
+            android:textColor="#000000"
             android:textSize="22sp" />
         <TextView
             android:layout_width="wrap_content"
@@ -101,7 +109,9 @@
             android:layout_alignParentBottom="true"
             android:layout_toEndOf="@+id/pkg_item_yuan_value"
             android:layout_toRightOf="@+id/pkg_item_yuan_value"
+            android:paddingBottom="3dp"
             android:text="起"
+            android:textColor="#000000"
             android:textSize="16sp" />
     </RelativeLayout>
 
