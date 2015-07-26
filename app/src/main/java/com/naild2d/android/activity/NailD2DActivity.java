@@ -13,6 +13,7 @@ import com.naild2d.android.activity.extend.NailD2DAsyncHandler;
 import com.naild2d.android.activity.extend.NailD2DAsyncTask;
 import com.naild2d.android.activity.extend.NailD2DTimerMessageHandler;
 import com.naild2d.android.activity.extend.NailD2DTimerTask;
+import com.naild2d.android.activity.transfer.TempData;
 
 import java.util.Timer;
 
@@ -68,6 +69,15 @@ public abstract class NailD2DActivity extends Activity {
     ///Background
     protected void doInBackground(NailD2DAsyncHandler handler, Object... params) {
         asyncTask = NailD2DAsyncTask.doInBackground(handler, params);
+    }
+
+    //Data
+    public void setTempData(String key, Object value) {
+        TempData.setData(key, value);
+    }
+
+    public Object getTempData(String key) {
+        return TempData.getData(key);
     }
 }
 

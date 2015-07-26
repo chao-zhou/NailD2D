@@ -5,9 +5,11 @@
     android:layout_height="200dp"
     android:orientation="vertical">
 
-    <ImageView
+    <com.naild2d.android.component.MyImageView
+        android:id="@+id/pkg_thumbnail"
         android:layout_width="match_parent"
         android:layout_height="250dp"
+        android:scaleType="fitXY"
         android:src="#dddddd" />
 
     <RelativeLayout
@@ -24,6 +26,7 @@
             android:src="@drawable/pkgdetail_price_bg" />
 
         <com.naild2d.android.component.PriceTextView
+            android:id="@+id/pkg_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"

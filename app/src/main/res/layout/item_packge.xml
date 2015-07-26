@@ -12,7 +12,7 @@
         android:layout_alignParentLeft="true"
         android:layout_margin="10dp"
         android:scaleType="fitXY"
-        android:src="#FF0000"/>
+        android:src="#dddddd" />
 
     <TableLayout
         android:id="@+id/item_info"
