@@ -10,7 +10,7 @@ import com.naild2d.android.R;
 import com.naild2d.android.activity.extend.NailD2DAsyncHandler;
 import com.naild2d.android.component.ImageTextView;
 import com.naild2d.android.component.MyImageView;
-import com.naild2d.android.component.OrderDateTableView;
+import com.naild2d.android.component.OrderDatePanelView;
 import com.naild2d.android.component.PriceTextView;
 import com.naild2d.android.component.ToggleServiceThumbnailView;
 import com.naild2d.android.model.PackageInfo;
@@ -30,10 +30,11 @@ public class PackageDetailActivity extends NailD2DListActivity<ServiceInfo> {
     private ImageTextView usageView = null;
     private ImageTextView evaluationView = null;
     private ImageTextView shopNameView = null;
-    private OrderDateTableView pkgScheduleView = null;
+    private OrderDatePanelView pkgScheduleView = null;
     private ScrollView pkgScrollView = null;
 
     private PackageService packageService = null;
+
 
     @Override
     protected boolean IsAutoAdjustListHeight() {
@@ -76,7 +77,7 @@ public class PackageDetailActivity extends NailD2DListActivity<ServiceInfo> {
         usageView = (ImageTextView) findViewById(R.id.pkg_usage);
         evaluationView = (ImageTextView) findViewById(R.id.pkg_evaluation_count);
         shopNameView = (ImageTextView) findViewById(R.id.pkg_shop_name);
-        pkgScheduleView = (OrderDateTableView) findViewById(R.id.pkg_schedule);
+        pkgScheduleView = (OrderDatePanelView) findViewById(R.id.pkg_schedule);
         pkgScrollView = (ScrollView) findViewById(R.id.pkg_scroll);
 
         updateView();
@@ -94,6 +95,15 @@ public class PackageDetailActivity extends NailD2DListActivity<ServiceInfo> {
         pkgAboutView.setText(packageInfo.getAbout());
         shopNameView.setText(packageInfo.getShop());
 
+        pkgScheduleView.setPackageId(packageInfo.getId());
+
+        pkgScheduleView.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                pkgScheduleView.setVisibility(View.GONE);
+            }
+        });
     }
 
     private void setEvaluationCount(int count) {

@@ -38,8 +38,13 @@
     <string name="title_activity_evaluation">EvaluationActivity</string>
     <string name="title_activity_order_status">OrderStatusActivity</string>
 
+    <string name="today">今天</string>
+    <string name="tomorrow">明天</string>
+    <string name="after_tomorrow">后天</string>
 
     <string name="string_format_package_usage">%d人做过</string>
     <string name="string_format_package_evaluation_count">顾客评价（%d）</string>
+    <string name="string_format_order_date_busy">%s(忙)</string>
+    <string name="string_format_order_date_free">%s(闲)</string>
 
 </resources>

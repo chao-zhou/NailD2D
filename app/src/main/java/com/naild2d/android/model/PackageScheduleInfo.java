@@ -58,4 +58,5 @@ public class PackageScheduleInfo extends JsonWrapper {
     public void setEnable(boolean enable) {
         this.enable = enable;
     }
+
 }

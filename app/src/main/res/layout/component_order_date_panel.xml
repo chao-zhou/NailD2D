@@ -5,32 +5,36 @@
     <LinearLayout
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
-       android:orientation="horizontal"
        android:layout_margin="0dp"
+        android:orientation="horizontal"
        android:padding="0dp">
             <Button
+                android:id="@+id/order_date_today"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/bg_order_tab_item_normal"
                 android:text="今天（忙）"
-                android:textSize="18sp"
-                android:background="@drawable/bg_order_tab_item_normal"/>
+                android:textSize="18sp" />
             <Button
+                android:id="@+id/order_date_tomorrow"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/bg_order_tab_item_normal"
                 android:text="明天（忙）"
-                android:textSize="18sp"
-                android:background="@drawable/bg_order_tab_item_normal"/>
+                android:textSize="18sp" />
             <Button
+                android:id="@+id/order_date_after_tomorrow"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="@drawable/bg_order_tab_item_active"
                 android:text="后天（闲）"
-                android:textSize="18sp"
-                android:background="@drawable/bg_order_tab_item_active"/>
+                android:textSize="18sp" />
     </LinearLayout>
     <com.naild2d.android.component.OrderDateTableView
+        android:id="@+id/order_date_table"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 </LinearLayout>
