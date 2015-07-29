@@ -35,7 +35,7 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="30dp"
                     android:background="@drawable/btn_shuicai_pink"
-                    android:onClick="login"
+                    android:onClick="submitOrder"
                     android:text="预约美丽"
                     android:textColor="#ffffff"
                     android:textSize="20sp" />

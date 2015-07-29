@@ -49,17 +49,20 @@ public class ToggleServiceThumbnailView extends RelativeLayout {
         topButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!isChecked) {
                     FireClickEvent();
-                } else {
-                    isChecked = false;
-                    updateMask();
-                }
             }
         });
         updateMask();
     }
 
+    public boolean isChecked() {
+        return isChecked;
+    }
+
+    public void setChecked(boolean checked) {
+        isChecked = checked;
+        updateMask();
+    }
 
     public void setImageId(int id) {
         imageThumbnail.setImageId(id);
@@ -72,6 +75,7 @@ public class ToggleServiceThumbnailView extends RelativeLayout {
     public void setServicePrice(double price) {
         servicePriceView.setText(String.valueOf(price));
     }
+
 
     public void setClickEventListener(ServiceThumbnailClickEventListener clickEventListener) {
         this.clickEventListener = clickEventListener;
