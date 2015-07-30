@@ -20,7 +20,7 @@
         <TextView
             style="@style/NailD2D_TopBarCenterText"
             android:background="@android:color/transparent"
-            android:text="我的优惠券"
+            android:text="优惠券"
             android:textColor="#FFFFFF" />
     </RelativeLayout>
 
@@ -32,7 +32,8 @@
         android:layout_marginRight="10dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/bg_border_black"
-        android:padding="1px">
+        android:padding="1px"
+        android:visibility="gone">
 
         <ToggleButton
             android:layout_width="match_parent"

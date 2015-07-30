@@ -116,6 +116,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="10dp"
                     android:background="@android:color/transparent"
+                    android:onClick="goToMyCoupon"
                     android:scaleType="fitEnd"
                     android:src="@drawable/home_btn_3" />
 

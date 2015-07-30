@@ -1,5 +1,7 @@
 package com.naild2d.android.service;
 
+import android.content.Context;
+
 import com.naild2d.android.api.CouponApi;
 import com.naild2d.android.json.IndexJSONObject;
 import com.naild2d.android.log.Logger;
@@ -8,10 +10,11 @@ import com.naild2d.android.model.CouponInfo;
 /**
  * Created by ebread on 2015/6/16.
  */
-public class CouponService {
+public class CouponService extends BaseService {
     private CouponApi couponApi = null;
 
-    public CouponService() {
+    public CouponService(Context context) {
+        super(context);
         couponApi = new CouponApi();
     }
 

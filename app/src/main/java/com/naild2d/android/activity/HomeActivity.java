@@ -21,6 +21,10 @@ public class HomeActivity extends Activity {
         startActivity(new Intent(this, PackageListActivity.class));
     }
 
+    public void goToMyCoupon(View view) {
+        startActivity(new Intent(this, MyCouponActivity.class));
+    }
+
 
     public void switchToUserProfile(View view) {
         Intent intent;
