@@ -1,0 +1,2 @@
+configurations.create("default")
+artifacts.add("default", file('MapApiLocation_1.3.3.jar'))

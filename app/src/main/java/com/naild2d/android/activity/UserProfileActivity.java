@@ -7,11 +7,11 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.naild2d.android.R;
+import com.naild2d.android.component.MyImageView;
 import com.naild2d.android.model.UserProfile;
 import com.naild2d.android.service.AccountService;
 import com.naild2d.android.service.ImageService;
@@ -19,7 +19,7 @@ import com.naild2d.android.service.ImageService;
 
 public class UserProfileActivity extends NailD2DActivity {
     UserProfile profile;
-    ImageView profileImageView;
+    MyImageView profileImageView;
     TextView txtNumber;
     AccountService accountService;
     ImageService imageService;
@@ -34,15 +34,11 @@ public class UserProfileActivity extends NailD2DActivity {
 
         profile = UserProfile.getUserProfile();
 
-        profileImageView = (ImageView) findViewById(R.id.user_profile_pic);
+        profileImageView = (MyImageView) findViewById(R.id.user_profile_pic);
         txtNumber = (TextView) findViewById(R.id.user_profile_number);
 
         txtNumber.setText(profile.getPhone());
-        Drawable drawable = getProfileDrawable();
-        if (drawable != null) {
-            profileImageView.setImageDrawable(drawable);
-        }
-
+        profileImageView.setImageId(profile.getAvatar());
 
     }
 

@@ -34,6 +34,14 @@ public class MyImageView extends ImageView {
         return imageId;
     }
 
+    public void setImageId(String id) {
+        try {
+            setImageId(Integer.parseInt(id));
+        } catch (Exception ex) {
+            //ignore
+        }
+    }
+
     public void setImageId(int id) {
         if (imageId == id)
             return;
